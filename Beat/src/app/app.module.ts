@@ -17,6 +17,7 @@ NgModule({
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
+    FormsModule
     AppRoutingModule,
     MatCardModule
   ],
