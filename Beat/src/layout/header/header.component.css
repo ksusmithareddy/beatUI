@@ -1,0 +1,9 @@
+.button {
+    top: 10px;
+    right: 0;
+    float: right;
+    width: auto;
+    text-align:center;
+    padding-inline: 20px;
+    display:flex;
+}
