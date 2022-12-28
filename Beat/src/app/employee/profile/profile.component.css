@@ -1,0 +1,19 @@
+.profile-detail,.profile-desc, .skills{
+    height:100%;
+}
+
+section{
+    height: 100vh;
+}
+
+.card_skill{
+    height: 0%;
+    width: 50rem;
+    padding: auto;
+    max-width: 20px;
+    
+}
+
+.skills{
+    margin-top: 4rem;
+}
