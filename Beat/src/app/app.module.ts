@@ -1,27 +1,37 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import {MatCardModule} from '@angular/material/card';
-NgModule({
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from 'layout/header/header.component';
+import { FooterComponent } from 'layout/footer/footer.component';
+
+
+@NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
-    LoginComponent
-  ],
+    routingComponents,
+    HeaderComponent,
+    FooterComponent],
+
   imports: [
-    MatButtonModule,
-    MatInputModule,
     ReactiveFormsModule,
-    MatIconModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    MatCardModule
+    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [LoginComponent]
+
 })
 export class AppModule { }

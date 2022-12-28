@@ -26,10 +26,9 @@
                 <mat-error *ngIf="loginForm.get('password').errors?.required">
                     Required Password
                 </mat-error>
-                </mat-form-field>
+              </mat-form-field>
             </div>
-            <button mat-flat-button color="primary">Login</button>
+            <a routerLink="/getEmployee"> <button mat-flat-button color="primary">Login</button></a> 
             </form>
         </mat-card-content>
 </mat-card>
-
