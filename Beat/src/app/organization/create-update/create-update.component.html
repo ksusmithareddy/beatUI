@@ -1,0 +1,52 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>creation and updation of organization</title>
+    <style>
+        .container{
+        max-width: 500px;
+      margin: auto;
+      padding: 10px;
+      border-style:solid;
+    }
+    div {
+        margin-bottom: 20px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
+    </style>
+    
+    <!-- <link rel="stylesheet" href="./create-update.component.css"> -->
+  </head>
+  <body >
+    <h2 style="margin-left: 35rem;">Add Details</h2>
+    <form action="/form/submit" method="post" class="container">
+      <div>
+        <label>Slab-Charge Id</label>&nbsp;&nbsp;&nbsp;
+        <input type="text"/>
+      </div>
+      <div>
+        <label>Name</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" />
+      </div>
+      <div>
+        <label>Location</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" />
+      </div>
+      <div>
+        <label>Owner</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" />
+      </div>
+      <div>
+        <label>Parent Organization</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" />
+      </div>
+      <button routerLinkActive="active" class="container" style="background-color:rgb(236, 236, 247); margin-left: 10rem;" type="submit"><a style="text-decoration:none;" routerLink="/viewheirachy">Create Organization</a></button>
+    </form>
+  </body>
+</html>
+<app-footer></app-footer>
