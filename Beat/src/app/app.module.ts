@@ -9,8 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from 'layout/header/header.component';
 import { FooterComponent } from 'layout/footer/footer.component';
-
-
 @NgModule({
   declarations: [
     LoginComponent,
@@ -27,11 +25,12 @@ import { FooterComponent } from 'layout/footer/footer.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [LoginComponent]
+  exports: [LoginComponent,HeaderComponent,FooterComponent]
 
 })
 export class AppModule { }
