@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HistoryComponent } from './history/history.component';
 import { DisplayTimesheetComponent } from './display-timesheet/display-timesheet.component';
 import { UpdateTimesheetComponent } from './update-timesheet/update-timesheet.component';
+import { AddTimesheetComponent } from './add-timesheet/add-timesheet.component';
 
 
 
@@ -16,7 +17,8 @@ import { UpdateTimesheetComponent } from './update-timesheet/update-timesheet.co
     ProfileComponent,
     HistoryComponent,
     DisplayTimesheetComponent,
-    UpdateTimesheetComponent
+    UpdateTimesheetComponent,
+    AddTimesheetComponent
   ],
   imports: [
     CommonModule
