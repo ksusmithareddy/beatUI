@@ -6,6 +6,8 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements AfterViewInit, OnInit{
+  
+
 
   accessString ="001111000000";
   accessArray : string[]=[...this.accessString];
@@ -19,6 +21,17 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   childCount=0;
   accessChildren=0;
   char ! :any;
+  searchText !: string;
+
+  //Function for the search bar 
+
+  onSearchText(event : any){
+    if(event.key==="Enter")
+         console.log(this.searchText);
+  }
+
+
+  // diffeent accessibility for different entitlement roles
    accessibility() {
 
     this.char=this.accessArray;
@@ -42,11 +55,8 @@ export class HeaderComponent implements AfterViewInit, OnInit{
 
 
    this.childrenArray= this.element[0].children[this.childCount].getElementsByTagName('li');
-   console.log(this.childrenArray);
    
    this.accessArray.forEach((char,index)=>{
-
-    console.log(index)
     
             if(index%4===0 && index>0)
             {
@@ -57,15 +67,12 @@ export class HeaderComponent implements AfterViewInit, OnInit{
 
             if(char==='0')
             {
-                console.log(this.childrenArray[this.accessChildren])
                 this.childrenArray[this.accessChildren].setAttribute('style','display:none');
             }
             
             this.accessChildren++;
 
    })
-
-       
 
   }
   
@@ -75,16 +82,12 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   
  }
 
- ngAfterContentInit(){
-
- }
 ngOnInit(){
 
 }
   ngAfterViewInit(): void {
     this.accessibility();
-  }  fun(){
-
-  }
+    
+  }  
   
 }

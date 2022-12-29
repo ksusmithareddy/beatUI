@@ -3,8 +3,8 @@
     <div class="logoSearch-bar" layout="row">
     <img flex="50" class="logo" src="https://www.accolite.com/assets/jpg/homebannerimages/accolite-logo.svg">
      <div flex="50" class="input-group search-bar">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control serach-bar--input" placeholder="Search" /><i class="fa-solid fa-magnifying-glass search-icon" ></i>
+        <div class="form-outline" >
+          <input type="search" id="form1" class="form-control serach-bar--input" [(ngModel)]="searchText" (keydown)="onSearchText($event)" placeholder="Search Employee" /><i class="fa-solid fa-magnifying-glass search-icon" ></i>
           <label class="form-label" for="form1"></label>
         </div>
       </div></div>
