@@ -56,7 +56,12 @@ mat-card{
     margin-bottom: 0;
 }
 
-.org,.emp {
+mat-form-field{
+    width:9rem;
+    height:4.4rem;
+}
+
+/* .org,.emp {
     border-right: 0.3px solid black;
     padding:0.7rem;
     cursor: pointer;
@@ -65,9 +70,15 @@ mat-card{
     padding:0.7rem;
     cursor: pointer;
 
+}*/
+
+/* .accessibility-options{
+    visibility: hidden;
 }
-.accessibility-options{
-    display: flex;
-    border: 0.2px solid grey;
-    /* visibility: hidden; */
+ */
+.btn{
+    background-color: none;
 }
+ .employee-dd{
+    background-color: none;
+ }
