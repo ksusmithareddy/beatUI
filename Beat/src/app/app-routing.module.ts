@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { DisplayTimesheetComponent } from './employee/display-timesheet/display-timesheet.component';
 import { HistoryComponent } from './employee/history/history.component';
 import { ProfileComponent } from './employee/profile/profile.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { LoginComponent } from './login/login.component';
 import { FooterComponent } from 'layout/footer/footer.component';
 import { HeaderComponent } from 'layout/header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';

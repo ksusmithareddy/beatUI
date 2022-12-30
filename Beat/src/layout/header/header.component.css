@@ -29,13 +29,13 @@ input{
     height:1.92rem;
 }
 
-.profile{
+/* .profile{
     margin-right: 2rem;
 }
 
 .profile:hover,.search-icon:hover{
     cursor: pointer;
-}
+} */
 
 .logo{
     width: 250px;
@@ -48,15 +48,20 @@ input{
     align-items: center;
 }
 
-mat-card{
+/* mat-card{
     box-shadow: none ! important;
 
 }
 .mat-mdc-card-avatar{
     margin-bottom: 0;
+} */
+
+mat-form-field{
+    width:9rem;
+    height:4.4rem;
 }
 
-.org,.emp {
+/* .org,.emp {
     border-right: 0.3px solid black;
     padding:0.7rem;
     cursor: pointer;
@@ -65,9 +70,20 @@ mat-card{
     padding:0.7rem;
     cursor: pointer;
 
+}*/
+
+/* .accessibility-options{
+    visibility: hidden;
 }
-.accessibility-options{
-    display: flex;
-    border: 0.2px solid grey;
-    /* visibility: hidden; */
+ */
+.btn{
+    background-color: none;
 }
+ .employee-dd{
+    background-color: none;
+ }
+
+ hr{
+    height: 2px;
+    border-top: 0.2rem solid grey;
+ }

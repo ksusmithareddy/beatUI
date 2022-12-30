@@ -1,22 +1,54 @@
 <div class="header" id="header">
    
     <div class="logoSearch-bar" layout="row">
-    <img flex="50" class="logo" src="https://www.accolite.com/assets/jpg/homebannerimages/accolite-logo.svg">
+    <img flex="50" class="logo" src="../../assets/images/accolite logo.png">
      <div flex="50" class="input-group search-bar">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control serach-bar--input" placeholder="Search" /><i class="fa-solid fa-magnifying-glass search-icon" ></i>
+        <div class="form-outline" >
+          <input type="search" id="form1" class="form-control serach-bar--input" [(ngModel)]="searchText" (keydown)="onSearchText($event)" placeholder="Search Employee" /><i class="fa-solid fa-magnifying-glass search-icon" ></i>
           <label class="form-label" for="form1"></label>
         </div>
       </div></div>
 
-      <div class="accessibility-options">
-        <div class="org">Organization</div>
-        <div class="emp">Employee</div>
-        <div class="project">Project</div>
+<div class="accessibility-options d-flex flex-row " id="accessibility-options">   
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+         Employee
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+           <li><a class="dropdown-item" href="#">Create</a></li>
+           <li><a class="dropdown-item" href="#">View</a></li>
+          <li><a class="dropdown-item" href="#">Update</a></li>
+          <li><a class="dropdown-item" href="#">Disable</a></li>
+        </ul>
       </div>
-    <mat-card>
-        <img routerLink="../profile" mat-card mat-card-avatar
-            src="https://media.istockphoto.com/id/1395878839/photo/despair.jpg?s=612x612&w=is&k=20&c=kMEeH-B5-xub-UIFCVSxRu86XRBPwrUznryzUshehJI=" class="profile"/>
-    </mat-card>
-</div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+        Organization
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+           <li><a class="dropdown-item" href="#">Create</a></li>
+           <li><a class="dropdown-item" href="#">View</a></li>
+          <li><a class="dropdown-item" href="#">Update</a></li>
+          <li><a class="dropdown-item" href="#">Disable</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+         Project
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+           <li><a class="dropdown-item" href="#">Create</a></li>
+           <li><a class="dropdown-item" href="#">View</a></li>
+          <li><a class="dropdown-item" href="#">Update</a></li>
+          <li><a class="dropdown-item" href="#">Disable</a></li>
+        </ul>
+      </div>
+      </div>
+      
+
+<!-- <mat-card> -->
+ <!-- <div mat-card-avatar>
+   <img  src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Shiba Inu" class="profile rounded"> 
+  </div></mat-card> -->
 <hr>
+
