@@ -1,0 +1,59 @@
+<!-- <app-header></app-header> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./view-heirarchy.component.css">
+</head>
+<body class="container">
+    <div style="margin: 50px;display: flex;flex-direction: column;justify-content: center;">
+        <div tabindex="0" class="e-card e-card-horizontal" style="width:400px">
+            <img src="C:\Users\bomma.c\aup\beatUI\Beat\src\assets\accolitelogo.jpg" alt="Sample" style="height: 50px">
+            <div class="e-card-stacked">
+                <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Philips Trimmer</div>
+                    </div>
+                </div>
+                <div class="e-card-content">
+                    LeadManager
+
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div tabindex="0" class="e-card e-card-horizontal" (click)="getDiv()" style="width:400px">
+            <!-- <button routerLinkActive="active" class="container" type="submit"></button> -->
+            <img src="C:\Users\bomma.c\IdeaProjects\beatUI\Beat\src\assets\images\accolitelogo.jpg" alt="Sample" style="height: 50px"><a style="text-decoration:none;" routerLink="/view">view</a>
+            <div class="e-card-stacked">
+                <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Alexa</div>
+                    </div>
+                </div>
+                <div class="e-card-content">
+                    ProjectManager
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div tabindex="0" class="e-card e-card-horizontal" style="width:400px">
+            <img src="C:\Users\bomma.c\aup\beatUI\Beat\src\assets\a.jpg" alt="Sample" style="height: 50px">
+            <div class="e-card-stacked">
+                <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Morgan</div>
+                    </div>
+                </div>
+                <div class="e-card-content">
+                    software Engineer
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- <app-footer></app-footer> -->

@@ -7,6 +7,11 @@ import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  email: any;
+  password: any
+  
+  router: any;
   loginForm : FormGroup | any;
   hide = true;
   constructor() { }
@@ -20,8 +25,13 @@ export class LoginComponent implements OnInit {
     
   }
 
-  onLogin(){
-
+  onLogin() : void {
+    if(this.email == 'admin@gmail.com' && this.password == 'admin123'){
+     this.router.navigate(["homepage"]);
+    }else {
+      alert("Invalid credentials");
+    }
   }
-}
+  }
+
 

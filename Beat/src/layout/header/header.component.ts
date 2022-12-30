@@ -31,7 +31,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   }
 
 
-  // diffeent accessibility for different entitlement roles
+  // different accessibility for different entitlement roles
    accessibility() {
 
     this.char=this.accessArray;

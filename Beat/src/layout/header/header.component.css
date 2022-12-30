@@ -29,13 +29,13 @@ input{
     height:1.92rem;
 }
 
-.profile{
+/* .profile{
     margin-right: 2rem;
 }
 
 .profile:hover,.search-icon:hover{
     cursor: pointer;
-}
+} */
 
 .logo{
     width: 250px;
@@ -48,13 +48,13 @@ input{
     align-items: center;
 }
 
-mat-card{
+/* mat-card{
     box-shadow: none ! important;
 
 }
 .mat-mdc-card-avatar{
     margin-bottom: 0;
-}
+} */
 
 mat-form-field{
     width:9rem;
@@ -81,4 +81,9 @@ mat-form-field{
 }
  .employee-dd{
     background-color: none;
+ }
+
+ hr{
+    height: 2px;
+    border-top: 0.2rem solid grey;
  }
