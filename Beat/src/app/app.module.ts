@@ -1,19 +1,18 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule,  } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA,NgModule,  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProfileComponent } from './employee/profile/profile.component';
-import { HistoryComponent } from './employee/history/history.component';
 import { DisplayTimesheetComponent } from './employee/display-timesheet/display-timesheet.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    HistoryComponent,
     DisplayTimesheetComponent,
+    FilterPipe,
     routingComponents
   ],
   imports: [
@@ -22,11 +21,12 @@ import { DisplayTimesheetComponent } from './employee/display-timesheet/display-
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   exports: []
 
 })

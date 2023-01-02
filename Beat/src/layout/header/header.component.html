@@ -1,54 +1,63 @@
-<div class="header" id="header">
-   
-    <div class="logoSearch-bar" layout="row">
-    <img flex="50" class="logo" src="../../assets/images/accolite logo.png">
-     <div flex="50" class="input-group search-bar">
-        <div class="form-outline" >
-          <input type="search" id="form1" class="form-control serach-bar--input" [(ngModel)]="searchText" (keydown)="onSearchText($event)" placeholder="Search Employee" /><i class="fa-solid fa-magnifying-glass search-icon" ></i>
-          <label class="form-label" for="form1"></label>
-        </div>
-      </div></div>
+<div class="header d-flex flex-row justify-content-between" id="header">
 
-<div class="accessibility-options d-flex flex-row " id="accessibility-options">   
+  <div class="logo" layout="row">
+    <img class="logo" src="../../assets/images/accolite logo.png">
+  </div>
+  <div class="search-bar d-flex flex-column">
+    <div flex="50" class="input-group search-bar form-outline">
+      <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
+        placeholder="Search Employee By Name" />
+      <label class="form-label" for="form1"></label>
+    </div>
+    <div class="employeeList" id="employeeList">
+      <div *ngFor="let employee of employees | filter : searchText " class="searchedEmp">
+        <div *ngIf="searchText!=''">
+          {{employee.id}}
+          {{employee.first_name}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="accessibility-options d-flex flex-row " id="accessibility-options">
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
-         Employee
-        </button>
-        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-           <li><a class="dropdown-item" href="#">Create</a></li>
-           <li><a class="dropdown-item" href="#">View</a></li>
-          <li><a class="dropdown-item" href="#">Update</a></li>
-          <li><a class="dropdown-item" href="#">Disable</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+      <button class="btn dropdown-toggle emp-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="true">
+        Employee
+      </button>
+      <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" routerLink="/createupdate">Create</a></li>
+        <li><a class="dropdown-item" routerLink="/view-emp-popup">View</a></li>
+        <li><a class="dropdown-item" routerLink="/app-create-update">Update</a></li>
+        <li><a class="dropdown-item" routerLink="/disable-popup">Disable</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn  dropdown-toggle org-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="true">
         Organization
-        </button>
-        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-           <li><a class="dropdown-item" href="#">Create</a></li>
-           <li><a class="dropdown-item" href="#">View</a></li>
-          <li><a class="dropdown-item" href="#">Update</a></li>
-          <li><a class="dropdown-item" href="#">Disable</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle employee-dd" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
-         Project
-        </button>
-        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-           <li><a class="dropdown-item" href="#">Create</a></li>
-           <li><a class="dropdown-item" href="#">View</a></li>
-          <li><a class="dropdown-item" href="#">Update</a></li>
-          <li><a class="dropdown-item" href="#">Disable</a></li>
-        </ul>
-      </div>
-      </div>
-      
+      </button>
+      <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" routerLink="/">Create</a></li>
+        <li><a class="dropdown-item" routerLink="">View</a></li>
+        <li><a class="dropdown-item" routerLink="">Update</a></li>
+        <li><a class="dropdown-item" routerlink="">Disable</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn  dropdown-toggle project-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="true">
+        Project
+      </button>
+      <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Create</a></li>
+        <li><a class="dropdown-item" href="#">View</a></li>
+        <li><a class="dropdown-item" href="#">Update</a></li>
+        <li><a class="dropdown-item" href="#">Disable</a></li>
+      </ul>
+    </div>
 
-<!-- <mat-card> -->
- <!-- <div mat-card-avatar>
-   <img  src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Shiba Inu" class="profile rounded"> 
-  </div></mat-card> -->
+  </div>
+  <div class="profile-display">
+    <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" routerLink="/profile"/>
+  </div>
+</div>
 <hr>
-

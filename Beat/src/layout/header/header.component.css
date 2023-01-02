@@ -1,89 +1,33 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding : 0.2rem;
+.logo{
+    width:180px
+}
 
+.header{
+    text-align: center;
+    align-items: center;
+    padding: 1.1rem
 }
 
 .search-bar{
-    border: 1px solid black;
-    border-radius: 0.3rem;
-    height:1.92rem;
+    width:40rem;
+    border-radius: 1.2rem;
 }
 
-.search-icon{
-    align-items: center;
-    font-size: 0.89rem;
-    padding: 0.3rem;
- 
+.search-bar--input{
+    border-radius: 0.32rem;
 }
 
-input{
-    border :none ;
-    padding :0.3rem;
-    border-radius: 0.3rem;
-    border-right: 0.2px solid black;
-    outline: none;
-    width:18rem;
-    height:1.92rem;
+hr{
+    border-top: 1px solid grey;
+    margin-top: 0;
 }
 
-/* .profile{
-    margin-right: 2rem;
+.accessibility-options{
+   gap: 0.9rem
 }
 
-.profile:hover,.search-icon:hover{
-    cursor: pointer;
-} */
-
-.logo{
-    width: 250px;
-    padding: 0.2rem;
+.emp-btn,.org-btn,.project-btn{
+    width:13rem;
+    border: 0.01rem solid #8080805c;
 }
 
-.logoSearch-bar{
-    display: flex;
-    gap: 11rem;
-    align-items: center;
-}
-
-/* mat-card{
-    box-shadow: none ! important;
-
-}
-.mat-mdc-card-avatar{
-    margin-bottom: 0;
-} */
-
-mat-form-field{
-    width:9rem;
-    height:4.4rem;
-}
-
-/* .org,.emp {
-    border-right: 0.3px solid black;
-    padding:0.7rem;
-    cursor: pointer;
-}
-.project{
-    padding:0.7rem;
-    cursor: pointer;
-
-}*/
-
-/* .accessibility-options{
-    visibility: hidden;
-}
- */
-.btn{
-    background-color: none;
-}
- .employee-dd{
-    background-color: none;
- }
-
- hr{
-    height: 2px;
-    border-top: 0.2rem solid grey;
- }
