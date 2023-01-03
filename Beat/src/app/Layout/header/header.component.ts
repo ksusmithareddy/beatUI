@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { EmployeeType } from 'app/employee-type';
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,11 +12,13 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   
 
 
-  accessString ="111111111111";
+  accessString ="011111111110";
   accessArray : string[]=[...this.accessString];
   count =0;
   element=document.getElementsByClassName("accessibility-options");
-
+  empId !: string;
+  empid=localStorage.getItem("empId")
+  
 
   getEntity !: any;
   childrenArray ! :any;
@@ -97,9 +100,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   }
   
   
- constructor(private httpClient :HttpClient){
- 
-  
+ constructor(private httpClient :HttpClient, private authservice : AuthService){
  }
 
 ngOnInit(){
@@ -114,4 +115,12 @@ ngOnInit(){
     
   }  
   
+
+  getDetails(){
+    console.log("EmpID IN  HEADER COMPONENT "+this.empid);
+    this.authservice.getProfileDetails().subscribe(
+      (response: any) => {
+        console.log(response);
+      });
+  }
 }

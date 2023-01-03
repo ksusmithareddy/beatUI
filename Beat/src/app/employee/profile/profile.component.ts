@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit, AfterViewInit{
       
   ShowHistory:boolean=false;
   showTimesheet:boolean=false;
-  pc =document.getElementById("dd");
+  
 
            constructor(public router : ActivatedRoute, public route: Router){}
 
@@ -27,6 +27,6 @@ export class ProfileComponent implements OnInit, AfterViewInit{
            }
 
 ngAfterViewInit(){
- console.log(this.pc);
+
 }
 }
