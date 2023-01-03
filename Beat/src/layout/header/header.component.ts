@@ -1,15 +1,17 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
-
+import { HttpClient } from "@angular/common/http";
+import { EmployeeType } from 'app/employee-type';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+ 
 })
 export class HeaderComponent implements AfterViewInit, OnInit{
   
 
 
-  accessString ="001111000000";
+  accessString ="111111111111";
   accessArray : string[]=[...this.accessString];
   count =0;
   element=document.getElementsByClassName("accessibility-options");
@@ -23,13 +25,26 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   char ! :any;
   searchText !: string;
 
-  //Function for the search bar 
+  employees : any=[];
 
+  id ! :number;
+  name! :string; 
+  data ! :any
+
+
+  //Function for the search bar 
+  
   onSearchText(event : any){
     if(event.key==="Enter")
          console.log(this.searchText);
   }
 
+  
+  filteredItem(){
+    console.log(this.searchText);
+  }
+
+  
 
   // different accessibility for different entitlement roles
    accessibility() {
@@ -74,16 +89,25 @@ export class HeaderComponent implements AfterViewInit, OnInit{
 
    })
 
+
+
+   //displaying list
+
+
   }
   
   
- constructor(){
+ constructor(private httpClient :HttpClient){
  
   
  }
 
 ngOnInit(){
+  this.httpClient.get("../assets/data/MOCK_DATA.json").subscribe(data  =>{
+    console.log(data);
+    this.employees = data;
 
+  })
 }
   ngAfterViewInit(): void {
     this.accessibility();
