@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   
 
 
-  accessString ="011111111110";
+  accessString ="111111111110";
   accessArray : string[]=[...this.accessString];
   count =0;
   element=document.getElementsByClassName("accessibility-options");
@@ -100,7 +101,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   }
   
   
- constructor(private httpClient :HttpClient, private authservice : AuthService){
+ constructor(private httpClient :HttpClient, private authservice : AuthService, public router :Router){
   console.log("this is header")
  }
 

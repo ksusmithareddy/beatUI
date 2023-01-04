@@ -11,6 +11,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { EmployeeModule } from './employee/employee.module';
+import { CreateOrganizationComponent } from './organization/create-organization/create-organization.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { EmployeeModule } from './employee/employee.module';
     FilterPipe,
     routingComponents,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CreateOrganizationComponent
   ],
   imports: [
     BrowserModule,

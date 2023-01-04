@@ -8,10 +8,12 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { HeaderComponent } from './Layout/header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
-import { CreateUpdateComponent } from './organization/create-update/create-update.component';
 import { SlabChargesComponent } from './organization/slab-charges/slab-charges.component';
 import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heirarchy.component';
 import { ViewComponent } from './organization/view/view.component';
+import { AddTimesheetComponent } from './employee/add-timesheet/add-timesheet.component';
+import { CreateUpdateComponent } from './employee/create-update/create-update.component';
+import { CreateOrganizationComponent } from './organization/create-organization/create-organization.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,8 +27,15 @@ const routes: Routes = [
     path: 'viewheirachy',
     component: ViewHeirarchyComponent
   },
+
   {
-    path: 'createupdate',
+    path: 'addtimesheet',
+    component: AddTimesheetComponent
+  },
+
+
+  {
+    path: 'employee/createupdate',
     component: CreateUpdateComponent
   },
   {
@@ -37,6 +46,10 @@ const routes: Routes = [
     path: 'view',
     component: ViewComponent
   },
+  {
+    path: 'createOrganization',
+    component: CreateOrganizationComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
@@ -46,5 +59,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [LoginComponent, HomepageComponent, HeaderComponent, FooterComponent, ViewHeirarchyComponent, CreateUpdateComponent, SlabChargesComponent, ViewComponent, DisplayTimesheetComponent,ProfileComponent];
+export const routingComponents = [LoginComponent, HomepageComponent, HeaderComponent, FooterComponent, ViewHeirarchyComponent, SlabChargesComponent, ViewComponent, DisplayTimesheetComponent,ProfileComponent];
 
