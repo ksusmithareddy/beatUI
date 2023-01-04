@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
+import { SharedService } from 'app/services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +23,13 @@ export class LoginComponent implements OnInit {
     }
   );
 
-  constructor(private router: Router, public authservice: AuthService) { }
-  ngOnInit() { }
+  constructor(private router: Router, public authservice: AuthService, private sharedService :SharedService) { }
+  ngOnInit() {
+     
+    this.sharedService.loginpage=true
+    console.log(this.sharedService.loginpage)
+
+   }
 
   sendData() {
     this.value = this.loginForm.value;

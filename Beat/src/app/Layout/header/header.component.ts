@@ -101,6 +101,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   
   
  constructor(private httpClient :HttpClient, private authservice : AuthService){
+  console.log("this is header")
  }
 
 ngOnInit(){
@@ -124,3 +125,5 @@ ngOnInit(){
       });
   }
 }
+
+

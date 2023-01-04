@@ -17,9 +17,10 @@ import { FooterComponent } from 'app/Layout/footer/footer.component';
     AddSkillsComponent,
     HistoryComponent,
    AddTimesheetComponent,
+   
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

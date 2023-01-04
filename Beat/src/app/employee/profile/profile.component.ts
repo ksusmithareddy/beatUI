@@ -8,19 +8,8 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit, AfterViewInit{
       
-  ShowHistory:boolean=false;
-  showTimesheet:boolean=false;
-  
 
            constructor(public router : ActivatedRoute, public route: Router){}
-
-           historyClicked(){
-               this.ShowHistory=true;
-           }
-
-           timesheetClicked(){
-              this.showTimesheet=true;
-           }
 
            ngOnInit(): void {
              
