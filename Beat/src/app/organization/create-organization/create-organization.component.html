@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]= "orgForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="orgName" class="form-label">orgName</label>
+              <small class="error" [class.d-none]="orgName?.valid || orgName?.untouched">orgName is a required field</small>
+              <input type="text" class="form-control" id="orgName"
+              formControlName="orgName" [class.is-invalid]="orgName?.invalid && orgName?.touched">
+          </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">location</label>
+                <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a required field</small>
+                <input type="text" class="form-control" id="location" placeholder=""
+                formControlName="location" [class.is-invalid]="location?.invalid && location?.touched">
+            </div>
+            <div class="mb-3">
+                <label for="owner" class="form-label">owner</label>
+                <small class="error" [class.d-none]="owner?.valid || owner?.untouched">owner is a required field</small>
+                <input type="text" class="form-control" id="owner" placeholder=""
+                formControlName="owner" [class.is-invalid]="owner?.invalid && owner?.touched">
+            </div>
+            <div class="mb-3">
+                <label for="ownerEmpId" class="form-label">ownerEmpId</label>
+                <small class="error" [class.d-none]="ownerEmpId?.valid || ownerEmpId?.untouched">ownerEmpId is a required field</small>
+                <input type="text" class="form-control" id="ownerEmpId" placeholder=""
+                formControlName="ownerEmpId" [class.is-invalid]="ownerEmpId?.invalid && ownerEmpId?.touched">
+            </div>
+            <div class="mb-3">
+                <label for="parentOrg" class="form-label">parentOrg</label>
+                <small class="error" [class.d-none]="parentOrg?.valid || parentOrg?.untouched">parentOrg is a required</small>
+                <input type="number" class="form-control" id="parentOrg" placeholder=""
+                formControlName="parentOrg" [class.is-invalid]="parentOrg?.invalid && parentOrg?.touched">
+            </div>
+            <div class="mb-3">
+                <button type="submit"  class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div>

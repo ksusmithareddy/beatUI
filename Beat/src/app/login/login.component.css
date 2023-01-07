@@ -1,30 +1,10 @@
-/* mat-card{
-    max-width: 600px;
-    margin: 2em auto;
-    text-align: center;
-    max-height: 600px;
+.logo{
+   width:100%
+}
+.logo_img{
+    width:50%
 }
 
-.header{
-    text-align: center;
+hr{
+    border-top: 1px solid grey;
 }
-
-.full-width{
-    width: 80%;
-
-}
-
-.forgot-password{
-    padding-left: 0px;
-
-}
-
-.email-input{
-    padding-top: 10px;
-}
-
-.aLink{
-    float: right;
-    padding-right: 60px;
-    text-decoration: none;
-} */
