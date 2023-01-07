@@ -15,8 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private sharedService :SharedService){}
 
   ngOnInit(){
-    this.loginstatus = this.sharedService.loginpage 
-    console.log(this.loginstatus)
+
   }
  
 }

@@ -1,4 +1,4 @@
-<!-- <app-header></app-header> -->
+<!-- <app-header></app-header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +27,7 @@
         <br><br>
         <div tabindex="0" class="e-card e-card-horizontal" (click)="getDiv()" style="width:400px">
             <!-- <button routerLinkActive="active" class="container" type="submit"></button> -->
-            <img src="C:\Users\bomma.c\IdeaProjects\beatUI\Beat\src\assets\images\accolitelogo.jpg" alt="Sample" style="height: 50px"><a style="text-decoration:none;" routerLink="/view">view</a>
+<!-- <img src="C:\Users\bomma.c\IdeaProjects\beatUI\Beat\src\assets\images\accolitelogo.jpg" alt="Sample" style="height: 50px"><a style="text-decoration:none;" routerLink="/view">view</a>
             <div class="e-card-stacked">
                 <div class="e-card-header">
                     <div class="e-card-header-caption">
@@ -56,4 +56,31 @@
     </div>
 </body>
 </html>
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer> --> -->
+
+<div class="card" style="width: 50rem;height:40rem;align-items: center; margin:auto;background: rgb(239, 235, 241);">
+    <div class="card-body">
+        <h2 style="margin-left: 2rem;padding-top: 3rem;" class="card-title">Project Details</h2><br>
+
+        <div>
+            <div>
+                <label> <b> Organization Id: </b></label> {{org.id}}
+            </div>
+            <div>
+                <label> <b> Organization Name: </b></label> {{org.orgName}}
+            </div>
+            <div>
+                <label> <b> location: </b></label> {{org.location}}
+            </div>
+            <div>
+                <label> <b> owner: </b></label> {{org.owner}}
+            </div>
+            <div>
+                <label> <b> ownerEmpId: </b></label> {{org.ownerEmpId}}
+            </div>
+            <div>
+                <label> <b> parentOrg: </b></label> {{org.parentOrg}}
+            </div>
+        </div>
+    </div>
+</div>

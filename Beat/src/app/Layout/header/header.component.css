@@ -31,3 +31,9 @@ hr{
     border: 0.01rem solid #8080805c;
 }
 
+.employeeList{
+    position: absolute;
+    z-index: 1;
+    border:1px solid grey;
+    top:9%;
+}

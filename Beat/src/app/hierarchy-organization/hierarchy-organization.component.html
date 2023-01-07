@@ -1,0 +1,11 @@
+<div class="empHierarchy">
+    <ul>
+        <li><a href="#"><img src="../../assets/images/a.jpg"><span>{{OrganizationLead.id}}, {{OrganizationLead.orgName}}</span></a>
+        <ul>
+            <li><a href="#"><img src="../../assets/images/a.jpg"><span>{{currentOrganization.id}}, {{currentOrganization.orgName}}</span></a></li>
+        </ul>
+        <ul>
+                <li *ngFor=" let child of childrenOrganization"><a href="#"><img src="../../assets/images/a.jpg"><span>{{childrenOrganization.id}}, {{childrenOrganization.orgName}}</span></a></li>
+        </ul>
+    </ul>
+</div>

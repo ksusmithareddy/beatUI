@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label for="parentOrg" class="form-label">parentOrg</label>
                 <small class="error" [class.d-none]="parentOrg?.valid || parentOrg?.untouched">parentOrg is a required</small>
-                <input type="text" class="form-control" id="parentOrg" placeholder=""
+                <input type="number" class="form-control" id="parentOrg" placeholder=""
                 formControlName="parentOrg" [class.is-invalid]="parentOrg?.invalid && parentOrg?.touched">
             </div>
             <div class="mb-3">

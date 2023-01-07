@@ -1,20 +1,25 @@
 <div class="header d-flex flex-row justify-content-between" id="header" *ngIf="router.url !=='/login'">
 
-    <div class="logo" layout="row">
-      <img class="logo" src="../../assets/images/accolite logo.png">
+  <div class="logo" layout="row">
+    <img class="logo" src="../../assets/images/accolite logo.png">
+  </div>
+  <div class="search-bar d-flex flex-column">
+    <div flex="50" class="input-group search-bar form-outline">
+      <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
+        placeholder="Search Employee By Name" (keypress)="onSearchText($event)" />
+      <label class="form-label" for="form1"></label>
     </div>
-    <div class="search-bar d-flex flex-column">
-      <div flex="50" class="input-group search-bar form-outline">
-        <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
-          placeholder="Search Employee By Name" />
-        <label class="form-label" for="form1"></label>
-      </div>
-      <div class="employeeList" id="employeeList">
-        <div *ngFor="let employee of employees | filter : searchText " class="searchedEmp">
-          <div *ngIf="searchText!=''">
+    <div class="employeeList" id="employeeList">
+      <!-- | filter : searchText " class="searchedEmp -->
+      <div *ngFor="let employee of employees " id="employees">
+        <button (click)="toProfile(employee.id)" *ngIf="searchText!=''" (click)="clickthis()">
+          {{employee.id}}
+          {{employee.name}} >
+          <!-- <div *ngIf="searchText!=''" (click)="clickthis()">
             {{employee.id}}
-            {{employee.first_name}}</div>
-        </div>
+            {{employee.name}}
+          </div> -->
+          </button>
       </div>
     </div>
     <div class="accessibility-options d-flex flex-row " id="accessibility-options">
@@ -25,7 +30,7 @@
         </button>
         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" routerLink="/employee/createupdate">Create</a></li>
-          <li><button class="dropdown-item" href="#" data-target="#employeeModal" data-toggle="modal" >View</button></li>
+          <li><button class="dropdown-item" href="#" data-target="#employeeModal" data-toggle="modal">View</button></li>
           <li><a class="dropdown-item" routerLink="/app-create-update">Update</a></li>
           <li><a class="dropdown-item" routerLink="/disable-popup">Disable</a></li>
         </ul>
@@ -37,39 +42,41 @@
         </button>
         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" routerLink="/createOrganization">Create</a></li>
-          <li><a class="dropdown-item" routerLink="/">View</a></li>
-          <li><a class="dropdown-item" routerLink="">Update</a></li>
+          <li><a class="dropdown-item" routerLink="/organizations">View</a></li>
+          <li><a class="dropdown-item" routerLink="/update-organization">Update</a></li>
           <li><a class="dropdown-item" routerlink="">Disable</a></li>
         </ul>
       </div>
       <div class="dropdown">
-        <button class="btn  dropdown-toggle project-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-          aria-expanded="true">
+        <button class="btn  dropdown-toggle project-btn" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="true">
           Project
         </button>
         <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Create</a></li>
-          <li><button class="dropdown-item" href="#" data-target="#exampleModal" data-toggle="modal" >View</button></li>
-          <li><a class="dropdown-item" href="#">Update</a></li>
+          <li><a class="dropdown-item" routerLink="/createProject">Create</a></li>
+          <li><button class="dropdown-item" href="#" data-target="#exampleModal" data-toggle="modal" routerLink="/projects">View</button></li>
+          <li><a class="dropdown-item">Update</a></li>
           <li><a class="dropdown-item" href="#">Disable</a></li>
         </ul>
       </div>
-  
+
     </div>
     <div class="profile-display">
-      <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" routerLink="/profile" (click)="getDetails()"/>
+      <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" 
+        (click)="getDetails()" />
     </div>
   </div>
   <hr>
-  
-<!--   
+
+  <!--   
 Button trigger modal
 <button type="button" class="btn btn-primary" >
     Launch demo modal
   </button>
    -->
   <!-- Modal for project -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -79,11 +86,11 @@ Button trigger modal
           </button>
         </div>
         <div class="modal-body">
-            <div flex="50" class="input-group search-bar form-outline">
-                <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
-                  placeholder="Search project by name" />
-                <label class="form-label" for="form1"></label>
-              </div>
+          <div flex="50" class="input-group search-bar form-outline">
+            <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
+              placeholder="Search project by name" />
+            <label class="form-label" for="form1"></label>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">View Project</button>
@@ -93,24 +100,25 @@ Button trigger modal
   </div>
 
 
-   <!-- Modal for employee -->
+  <!-- Modal for employee -->
 
-   <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        
+
         <div class="modal-header">
-          <h5 class="modal-title"  id="exampleModalLabel">Modal title</h5>
-          <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span  aria-hidden="true">&times;</span>
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <div flex="50" class="input-group search-bar form-outline">
-                <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
-                  placeholder="Search project by name" />
-                <label class="form-label" for="form1"></label>
-              </div>
+          <div flex="50" class="input-group search-bar form-outline">
+            <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
+              placeholder="Search project by name" />
+            <label class="form-label" for="form1"></label>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">View Employee</button>

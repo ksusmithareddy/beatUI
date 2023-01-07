@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrganizationService } from 'app/services/organization.service';
-import { organization } from './organization';
 
 @Component({
   selector: 'app-create-organization',
@@ -10,7 +9,6 @@ import { organization } from './organization';
   styleUrls: ['./create-organization.component.css']
 })
 export class CreateOrganizationComponent {
-
 
   data: any;
   id: any;
@@ -29,11 +27,13 @@ export class CreateOrganizationComponent {
   onSubmit() {
     this.data = this.orgForm.value;
     alert("organization is added")
-    this.organizationService.saveOrganizationData(this.data).subscribe((data) =>
+    this.organizationService.saveOrganizationData(this.data).subscribe((data) =>{
       console.log(data)
+      this.goToOrganizationList()
+    }
     );
   }
-  goToProjectList(){
+  goToOrganizationList(){
     this.route1.navigate(['/organizations']);
   }
  get orgName() {

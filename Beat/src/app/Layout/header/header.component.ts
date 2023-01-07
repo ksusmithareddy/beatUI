@@ -2,6 +2,8 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { SharedService } from 'app/services/shared.service';
+import { SearchService } from 'app/services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +13,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements AfterViewInit, OnInit{
   
+//getting value from cookie 
 
-
-  accessString ="111111111110";
-  accessArray : string[]=[...this.accessString];
+  accessString ='';
+  accessArray : string[]=[];
   count =0;
   element=document.getElementsByClassName("accessibility-options");
-  empId !: string;
-  empid=localStorage.getItem("empId")
+  empId !: any;
   
 
   getEntity !: any;
@@ -34,22 +35,32 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   id ! :number;
   name! :string; 
   data ! :any
+  constructor(private httpClient :HttpClient, private authservice : AuthService, private sharedData :SharedService, public router :Router, public search :SearchService){
+  }
+ 
 
 
   //Function for the search bar 
   
   onSearchText(event : any){
+    document.getElementById("employeeList")?.setAttribute("style","display:block")
     if(event.key==="Enter")
-         console.log(this.searchText);
+       this.search.getSearchedData(this.searchText).subscribe(response=>{
+        this.employees=response;
+        console.log(event.target.blur());
+       })
+  }
+  
+  clickthis(){
+    document.getElementById("employeeList")?.setAttribute("style","display:none");
   }
 
-  
-  filteredItem(){
-    console.log(this.searchText);
+  toProfile(e :any){
+    e=Number(e);
+    this.router.navigate(['/profile', e]);
   }
-
   
-
+  
   // different accessibility for different entitlement roles
    accessibility() {
 
@@ -101,29 +112,37 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   }
   
   
- constructor(private httpClient :HttpClient, private authservice : AuthService, public router :Router){
-  console.log("this is header")
- }
 
-ngOnInit(){
-  this.httpClient.get("../assets/data/MOCK_DATA.json").subscribe(data  =>{
-    console.log(data);
-    this.employees = data;
+ngOnInit(){}
+  ngAfterViewInit(){
+    this.sharedData.currentValue.subscribe(ID =>{
+      this.accessString=ID;
+      this.accessString=this.accessString.split(',').join("");
+      this.accessArray=[...this.accessString];
 
-  })
-}
-  ngAfterViewInit(): void {
+      //setting update employee character
+      this.sharedData.setEmpUpdate(this.accessArray[2]);
+
+      //setting update project character
+      this.sharedData.setProjectUpdate(this.accessArray[6]);
+      this.sharedData.currentProjectUpdate.subscribe((x)=>
+      console.log(x));
+
+      //setting update organization character
+      this.sharedData.setOrgUpdate(this.accessArray[10]);
+      this.sharedData.currentOrgUpdate.subscribe((x)=>{
+
+      })
+
+    });
     this.accessibility();
     
   }  
   
 
   getDetails(){
-    console.log("EmpID IN  HEADER COMPONENT "+this.empid);
-    this.authservice.getProfileDetails().subscribe(
-      (response: any) => {
-        console.log(response);
-      });
+    this.empId=Number(localStorage.getItem('empId'))
+    this.router.navigate(['/profile', this.empId ]);
   }
 }
 

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]= "orgForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="id" class="form-label">Organization id</label>
+                    <!-- <small class="error" [class.d-none]="id?.valid || id?.untouched"> project id is a required field</small> -->
+                    <input type="number" class="form-control" id="id" value="{{org.id}}"
+                    formControlName="id">
+              <label for="orgName" class="form-label">orgName</label>
+               <input type="text" class="form-control" id="orgName" value="{{org.orgName}}"
+              formControlName="orgName" >
+          </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">location</label>
+                <input type="text" class="form-control" id="location" placeholder="" value="{{org.location}}"
+                formControlName="location" >
+            </div>
+            <div class="mb-3">
+                <label for="owner" class="form-label">owner</label>
+                <!-- <small class="error" [class.d-none]="owner?.valid || owner?.untouched">owner is a required field</small> -->
+                <input type="text" class="form-control" id="owner" placeholder="" value="{{org.owner}}"
+                formControlName="owner" >
+            </div>
+            <div class="mb-3">
+                <label for="ownerEmpId" class="form-label">ownerEmpId</label>
+                <!-- <small class="error" [class.d-none]="ownerEmpId?.valid || ownerEmpId?.untouched">ownerEmpId is a required field</small> -->
+                <input type="text" class="form-control" id="ownerEmpId" placeholder="" value="{{org.ownerEmpId}}"
+                formControlName="ownerEmpId" >
+            </div>
+            <div class="mb-3">
+                <label for="parentOrg" class="form-label">parentOrg</label>
+                <!-- <small class="error" [class.d-none]="parentOrg?.valid || parentOrg?.untouched">parentOrg is a required</small> -->
+                <input type="number" class="form-control" id="parentOrg" placeholder="" value="{{org.parentOrg}}"
+                formControlName="parentOrg" >
+            </div>
+            <div class="mb-3">
+                <button type="submit"  class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div>
+  <div style="min-height: 50px;"></div>

@@ -15,6 +15,8 @@ export class AuthService {
     return this.http.post<Body>('http://localhost:9090/beat/api/v1/login/user', {email, password}).pipe(shareReplay())
   }
 
+  
+
 
 
   getProfileDetails(){

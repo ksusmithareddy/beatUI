@@ -16,9 +16,8 @@ export class FilterPipe implements PipeTransform {
 // ]
 
   transform(value: any[], filterString :string) : any[]{
- 
+
     if (!value) { 
-      var fs =filterString.toLowerCase();
       return []; 
     }
     

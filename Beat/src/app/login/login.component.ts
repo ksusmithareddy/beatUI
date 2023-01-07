@@ -12,6 +12,7 @@ import { SharedService } from 'app/services/shared.service';
 export class LoginComponent implements OnInit {
 
   value: any;
+  accessString : any;
   errorMessage :string ='';
   empId !: number;
   jwt !: string;
@@ -26,9 +27,6 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, public authservice: AuthService, private sharedService :SharedService) { }
   ngOnInit() {
      
-    this.sharedService.loginpage=true
-    console.log(this.sharedService.loginpage)
-
    }
 
   sendData() {
@@ -36,16 +34,19 @@ export class LoginComponent implements OnInit {
     if (this.value.email && this.value.password) {
       this.authservice.login(this.value.email, this.value.password).subscribe(
         (response: any) => {
-          console.log(response);
-          this.empId=response.empId;
-         
           if (response.empId && response.jwt && response.accessId){
-            { localStorage.setItem('empId',this.empId.toString());
+               this.access=response.accessId;
+               this.jwt=response.jwt;
+               document.cookie="JWT"+'='+this.jwt;
+               localStorage.setItem('accessID',this.access);
+               this.accessString=localStorage.getItem('accessID')
+               this.sharedService.passValue(this.accessString);
+               this.empId=response.empId;
+               localStorage.setItem('empId', this.empId.toString());
+
               this.router.navigate(['/homepage']);
             }
-          
-          }
-
+        
           else {
             this.router.navigate(['/login']);
           }

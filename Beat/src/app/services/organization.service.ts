@@ -1,39 +1,29 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { organization } from '../organization/create-organization/organization';
+import { organization } from 'app/organization/organization';
 @Injectable({
   providedIn: 'root'
 })
 export class OrganizationService {
   constructor(private httpClient: HttpClient) {
   }
-  postURL = "http://localhost:9090/beat/api/v1/project";
+  postURL = "";
   saveOrganizationData(data:any)
   {
     console.log(data);
-    return this.httpClient.post(this.postURL+'/create',data);
+    return this.httpClient.post('http://localhost:9090/beat/api/v1/organization/create',data);
   }
   getOrganizationsList(): Observable<organization[]>{
-    return this.httpClient.get<organization[]>('http://localhost:9090/beat/api/v1/project');
+    return this.httpClient.get<organization[]>('http://localhost:9090/beat/api/v1/organization/get');
   }
   createOrganization(org: organization): Observable<Object>{
-    return this.httpClient.post('http://localhost:8080/beat/api/v1/organization/create', org);
+    return this.httpClient.post('http://localhost:9090/beat/api/v1/organization/create', org);
   }
   getOrganizationById(id: number): Observable<organization>{
-    return this.httpClient.get<organization>('http://localhost:9090/beat/api/v1/project'+id);
+    return this.httpClient.get<organization>('http://localhost:9090/beat/api/v1/organization/get/'+id);
   }
   updateOrganization(id: number, org: organization): Observable<Object>{
-    return this.httpClient.put('http://localhost:9090/beat/api/v1/project'+id, org);
+    return this.httpClient.put('http://localhost:9090/beat/api/v1/organization/update', org);
   }
 }
-
-
-
-
-
-
-
-
-

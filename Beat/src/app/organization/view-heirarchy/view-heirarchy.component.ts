@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OrganizationService } from 'app/services/organization.service';
+import { organization } from '../organization';
+
+
 
 @Component({
   selector: 'app-view-heirarchy',
@@ -6,10 +11,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-heirarchy.component.css']
 })
 export class ViewHeirarchyComponent {
-router: any;
-getDiv()
-{
-      this.router.navigate(['/view']); // I need to get div1 of route1 here
-}
+  id!: number;
+  org: organization =new organization();
+  constructor(private route: ActivatedRoute, private orgService: OrganizationService) { }
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.org = new organization();
+    this.orgService.getOrganizationById(this.id).subscribe( data => {
+      this.org = data;
+    });
+  }
 }
 
