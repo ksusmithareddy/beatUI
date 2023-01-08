@@ -9,28 +9,33 @@ export class FilterPipe implements PipeTransform {
   item ! :any ;
   fs:string ='';
   filteredArray : Array<{id: number , name: string}>=[];
-//   ok=[{
-//     id:0,
-//     name:""
-//   }
-// ]
 
   transform(value: any[], filterString :string) : any[]{
 
-    if (!value) { 
+    if (value.length===0) { 
       return []; 
     }
-    
+
    
    
     return value.filter(item => {
       var fs =filterString.toLowerCase();
-      if (item && item['first_name']) {
-        if(item['first_name'].toLowerCase().includes(filterString))
+      if (item && item['name']) {
+        if(item['name'].toLowerCase().includes(filterString))
                return item;
       }
       return false ;
     });
+
+    // return value.filter((item)=>{
+    //   if(item.name.indexOf(filterString)> -1){
+    //     console.log(item);
+    //   }
+    //   // this.filteredArray.push(item);
+
+    //   return this.filteredArray;
+   
+ 
    }
 
  

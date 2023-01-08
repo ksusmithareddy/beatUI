@@ -22,6 +22,8 @@ import { OrganizationlistComponent } from './organization/organizationlist/organ
 import { HierarchyOrganizationComponent } from './hierarchy-organization/hierarchy-organization.component';
 import { ViewComponent } from './organization/view/view.component';
 import { CreateUpdateComponent } from './employee/create-update/create-update.component';
+import { DatePipe } from '@angular/common';
+import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { CreateUpdateComponent } from './employee/create-update/create-update.co
     OrganizationlistComponent,
     HierarchyOrganizationComponent,
     ViewComponent,
-    CreateUpdateComponent
+    CreateUpdateComponent,
+    EmpUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import { CreateUpdateComponent } from './employee/create-update/create-update.co
     HttpClientModule,
     EmployeeModule,
   ],
-  providers: [ ],
+  providers: [ DatePipe ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   exports: []

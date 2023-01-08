@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectService } from 'app/services/project.service';
 import { Router } from '@angular/router';
+import { SharedService } from 'app/services/shared.service';
 import { Project } from '../project';
 
 @Component({
@@ -10,11 +11,14 @@ import { Project } from '../project';
 })
 export class ProjectlistComponent {
   projects: Project[]=[];
+  updateValue! :string;
 
   constructor(private projectService: ProjectService,
-    private router: Router) { }
+    private router: Router, private sharedService: SharedService) { }
 
   ngOnInit(): void {
+    this.sharedService.currentProjectUpdate.subscribe(x=>
+      this.updateValue=x);
     this.getProjects();
   }
 
