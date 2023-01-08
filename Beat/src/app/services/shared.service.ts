@@ -12,8 +12,12 @@ export class SharedService {
 
     //Storing update information
     empUpdate =0;
-    projectUpdate =0;
+    empView=0;
+    empTerminate=0;
     orgUpdate=0;
+    orgTerminate=0;
+    projectUpdate =0;
+    projectTerminate=0;
     id! : number; 
     mid: any;
     profile!:Profile;

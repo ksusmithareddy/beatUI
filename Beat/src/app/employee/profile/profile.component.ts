@@ -29,9 +29,7 @@ export class ProfileComponent implements OnInit{
            ngOnInit(){
             this.sharedData.currentEmpUpdate.subscribe((x)=>{
              this.getUpdateChar=x;
-             console.log(this.getUpdateChar)});
-
-            //  this.id = this.router.snapshot.params['id'];
+            });
              this.id=this.router.snapshot.paramMap.get('id');
              this.oldId = this.id;
              this.ps.getEmpDetailsById(this.id).subscribe((x) => {

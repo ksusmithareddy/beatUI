@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrganizationService } from 'app/services/organization.service';
+import { SharedService } from 'app/services/shared.service';
 import { organization } from '../organization';
 
 
@@ -13,13 +14,17 @@ export class OrganizationlistComponent {
   organizations: organization[]=[];
   orgArray : any=[];
   employees : any=[];
+  updateOrg! :string;
 
   constructor(private organizationService: OrganizationService,
-    private router: Router) { }
+    private router: Router,private sharedService : SharedService) { }
 
 
 
   ngOnInit(): void {
+    this.sharedService.currentOrgUpdate.subscribe(x=>
+      {this.updateOrg=x;
+       });
     this.getOrganizations();
   }
 

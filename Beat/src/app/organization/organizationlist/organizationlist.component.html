@@ -26,7 +26,7 @@
             <td>{{item.parentOrg}}</td>
            
             <td>
-                <button (click) = "updateOrganization(item.id)" class = "btn btn-primary"> Update</button>
+                <button *ngIf="updateOrg==='1'" (click) = "updateOrganization(item.id)" class = "btn btn-primary"> Update</button>
              <!-- <button (click) = "deleteProject(project.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
                 <button (click) = "organizationDetails(item.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
                 <button (click) = "organizationHierarchy(item.id)" class = "btn btn-primary" style="margin-left: 10px"> Hierarchy</button>
