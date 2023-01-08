@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: 'profile/:id', component: ProfileComponent, 
   },
-  { path: 'profile/history', component: HistoryComponent },
+  { path: 'profile/history/:id', component: HistoryComponent },
     { path: 'profile/timesheets', component: DisplayTimesheetComponent },
 
   {
@@ -88,6 +88,7 @@ const routes: Routes = [
     path: 'hierarchy/:id',
     component: HierarchyOrganizationComponent
   },
+
 
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },

@@ -37,6 +37,10 @@ export class ProjectlistComponent {
     this.router.navigate(['update-project', id]);
   }
 
+  projectDisable(id: number){
+    this.projectService.DisableProject(id);
+  }
+
   // deleteProject(id: number){
   //   this.projectService.deleteProject(id).subscribe( data => {
   //     console.log(data);

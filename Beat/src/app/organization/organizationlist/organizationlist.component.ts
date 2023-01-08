@@ -47,4 +47,7 @@ export class OrganizationlistComponent {
   {
     this.router.navigate(['hierarchy', id]);
   }
+  DisableOrganization(id:number){
+    this.organizationService.DisableOrg(id);
+  }
 }

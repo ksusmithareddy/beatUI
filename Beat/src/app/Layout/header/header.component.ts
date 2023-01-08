@@ -48,6 +48,37 @@ ngOnInit(){
   })
 
 }
+
+  
+ngAfterViewInit(){
+  this.sharedData.currentValue.subscribe(ID =>{
+    this.accessString=ID;
+    this.accessString=this.accessString.split(',').join("");
+    this.accessArray=[...this.accessString];
+
+    //setting update employee character
+    this.sharedData.setEmpUpdate(this.accessArray[2]);
+
+    //setting update project character
+    this.sharedData.setProjectUpdate(this.accessArray[6]);
+
+    //setting update organization character
+    this.sharedData.setOrgUpdate(this.accessArray[10]);
+    
+    //setting disable employee character
+    this.sharedData.setEmpTermination(this.accessArray[3]);
+
+    //setting disable project character
+    this.sharedData.setOrgTermination(this.accessArray[7]);
+
+    //setting disable project character
+    this.sharedData.setProjectTermination(this.accessArray[11]);
+
+  });
+  this.accessibility();
+  
+}  
+
  
 
 
@@ -93,28 +124,34 @@ ngOnInit(){
    {
    this.getEntity[2].setAttribute("style","display:none");
    }
+ 
 
+   this.childrenArray= this.element[this.accessChildren].children[this.childCount].getElementsByTagName('li');
+ 
+   if(this.char[0]==='0')
+   {
+    this.childrenArray[0].setAttribute('style','display:none');
+   }
 
-   this.childrenArray= this.element[0].children[this.childCount].getElementsByTagName('li');
-   
-   this.accessArray.forEach((char,index)=>{
+   if(this.char[4]==='0')
+   {
+    this.childrenArray= this.element[this.accessChildren++].children[this.childCount++].getElementsByTagName('li');
+    this.childrenArray[this.accessChildren++].setAttribute('style','display:none');
+   }
+
+   if(this.char[5]==='0')
+   {
+    this.childrenArray= this.element[this.accessChildren].children[this.childCount++].getElementsByTagName('li');
+    this.childrenArray[this.accessChildren++].setAttribute('style','display:none');
+   }
+
+   if(this.char[8]==='0')
+   {
+    this.childrenArray= this.element[this.accessChildren++].children[this.childCount++].getElementsByTagName('li');
+    this.childrenArray[this.accessChildren++].setAttribute('style','display:none');
+   }
+
     
-            if(index%4===0 && index>0)
-            {
-               this.childCount++;
-               this.accessChildren=0;
-               this.childrenArray= this.element[0].children[this.childCount].getElementsByTagName('li');
-            }
-
-            if(char==='0')
-            {
-                this.childrenArray[this.accessChildren].setAttribute('style','display:none');
-            }
-            
-            this.accessChildren++;
-
-   })
-
 
 
    //displaying list
@@ -122,32 +159,7 @@ ngOnInit(){
 
   }
   
-  
-  ngAfterViewInit(){
-    this.sharedData.currentValue.subscribe(ID =>{
-      this.accessString=ID;
-      this.accessString=this.accessString.split(',').join("");
-      this.accessArray=[...this.accessString];
 
-      //setting update employee character
-      this.sharedData.setEmpUpdate(this.accessArray[2]);
-
-      //setting update project character
-      this.sharedData.setProjectUpdate(this.accessArray[6]);
-      this.sharedData.currentProjectUpdate.subscribe((x)=>
-      console.log(x));
-
-      //setting update organization character
-      this.sharedData.setOrgUpdate(this.accessArray[10]);
-      this.sharedData.currentOrgUpdate.subscribe((x)=>{
-
-      })
-
-    });
-    this.accessibility();
-    
-  }  
-  
 
   getDetails(){
     this.empId=Number(localStorage.getItem('empId'));

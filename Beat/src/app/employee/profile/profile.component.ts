@@ -69,4 +69,9 @@ export class ProfileComponent implements OnInit{
             this.route.navigate(['employee/update',id]);
           }
 
+          DisableEmployee(){
+            this.id = this.router.snapshot.params['id'];
+            this.ps.DisableEmployee(this.id);
+          }
+
 }

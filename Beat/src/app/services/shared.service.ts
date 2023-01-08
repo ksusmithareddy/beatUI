@@ -41,12 +41,34 @@ export class SharedService {
 
     
     private org =new BehaviorSubject<any>(this.orgUpdate);
-    currentOrgUpdate=this.project.asObservable();
+    currentOrgUpdate=this.org.asObservable();
 
     setOrgUpdate(char :string){
-      this.project.next(char);
+      this.org.next(char);
     }
 
+
+    private empDisable=new BehaviorSubject<any>(this.empTerminate);
+    currentEmpDisable =this.empDisable.asObservable();
+
+    setEmpTermination(char :string){
+      this.empDisable.next(char);
+    }
+
+    private orgDisable=new BehaviorSubject<any>(this.orgTerminate);
+    currentOrgDisable =this.orgDisable.asObservable();
+
+    setOrgTermination(char :string){
+      this.orgDisable.next(char);
+    }
+
+    private projectDisable=new BehaviorSubject<any>(this.projectTerminate);
+    currentProjectDisable =this.projectDisable.asObservable();
+
+    setProjectTermination(char :string){
+      this.projectDisable.next(char);
+    }
+    
   accessID=localStorage.getItem("accessID");
   private messageSource = new BehaviorSubject<any>(this.accessID);
   currentValue = this.messageSource.asObservable();
