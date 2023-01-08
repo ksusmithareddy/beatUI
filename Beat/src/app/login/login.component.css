@@ -1,10 +1,35 @@
-.logo{
-   width:100%
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
-.logo_img{
+
+.login_logo{
     width:50%
 }
 
-hr{
-    border-top: 1px solid grey;
-}
+
+.section::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  .login{
+    border: 0.2px solid lightgray
+  }
+
+
+      /* background-image: url('../../assets/images/laptop-g65fc8c192_1920.jpg'); */

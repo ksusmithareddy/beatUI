@@ -21,6 +21,7 @@ import { UpdateOrganizationComponent } from './organization/update-organization/
 import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heirarchy.component';
 import { ViewComponent } from './organization/view/view.component';
 import { HierarchyOrganizationComponent } from './hierarchy-organization/hierarchy-organization.component';
+import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
 
 const routes: Routes = [
   
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'employee/createupdate',
     component: CreateUpdateComponent
+  },
+  {
+    path: 'employee/update/:id',
+    component : EmpUpdateComponent
   },
 
   {
@@ -83,6 +88,7 @@ const routes: Routes = [
     path: 'hierarchy/:id',
     component: HierarchyOrganizationComponent
   },
+
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }

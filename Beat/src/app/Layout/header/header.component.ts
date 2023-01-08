@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { SharedService } from 'app/services/shared.service';
 import { SearchService } from 'app/services/search.service';
+import { EmployeeService } from 'app/services/employee.service';
 
 @Component({
   selector: 'app-header',
@@ -28,27 +29,37 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   childCount=0;
   accessChildren=0;
   char ! :any;
-  searchText !: string;
+  searchText : string ='';
 
   employees : any=[];
 
   id ! :number;
   name! :string; 
   data ! :any
-  constructor(private httpClient :HttpClient, private authservice : AuthService, private sharedData :SharedService, public router :Router, public search :SearchService){
+  constructor(private httpClient :HttpClient, private authservice : AuthService, private sharedData :SharedService, public router :Router, public search :SearchService,
+    private empService :EmployeeService){
   }
+  
+ngOnInit(){
+
+  this.empService.getEmployeeList().subscribe(response=>{
+    this.employees=response;
+    console.log(this.employees);
+  })
+
+}
  
 
 
   //Function for the search bar 
   
-  onSearchText(event : any){
-    document.getElementById("employeeList")?.setAttribute("style","display:block")
-    if(event.key==="Enter")
-       this.search.getSearchedData(this.searchText).subscribe(response=>{
-        this.employees=response;
-        console.log(event.target.blur());
-       })
+  onSearchText(){
+    document.getElementById("employeeList")?.setAttribute("style","display:block");
+      //  this.search.getSearchedData(this.searchText).subscribe(response=>{
+      //   this.employees=response;
+      //   console.log(this.employees)
+      //   console.log(event.target.blur());
+      //  })
   }
   
   clickthis(){
@@ -112,8 +123,6 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   }
   
   
-
-ngOnInit(){}
   ngAfterViewInit(){
     this.sharedData.currentValue.subscribe(ID =>{
       this.accessString=ID;
@@ -141,8 +150,25 @@ ngOnInit(){}
   
 
   getDetails(){
-    this.empId=Number(localStorage.getItem('empId'))
+    this.empId=Number(localStorage.getItem('empId'));
+    if(document.getElementById("profile_list")?.style.display==='block'){
+            document.getElementById("profile_list")?.setAttribute("style",'display: none');
+    }
+    else
+    {
+      document.getElementById("profile_list")?.setAttribute("style",'display: block');
+    }
+    
+  }
+  
+  showProfile(){
     this.router.navigate(['/profile', this.empId ]);
+    document.getElementById("profile_list")?.setAttribute("style",'display: none');
+  }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(["/login"]);
+    document.getElementById("profile_list")?.setAttribute("style",'display: none');
   }
 }
 

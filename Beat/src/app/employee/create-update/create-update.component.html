@@ -1,69 +1,67 @@
-<div class="container">
+<div class="container createEmployee">
   <div class="row">
-      <div class="col-md-6">
-          <form [formGroup]= "empForm" (ngSubmit)="onSubmit()">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <small class="error" [class.d-none]="name?.valid || name?.untouched">name is a required field</small>
-            <input type="text" class="form-control" id="name"
-            formControlName="name" [class.is-invalid]="name?.invalid && name?.touched">
+    <div class="col-md-6">
+      <form [formGroup]="empForm" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <small class="error" [class.d-none]="name?.valid || name?.untouched">name is a required field</small>
+          <input type="text" class="form-control" id="name" formControlName="name"
+            [class.is-invalid]="name?.invalid && name?.touched">
         </div>
-          <div class="mb-3">
-              <label for="location" class="form-label">location</label>
-              <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a required field</small>
-              <input type="text" class="form-control" id="location" placeholder=""
-              formControlName="location" [class.is-invalid]="location?.invalid && location?.touched">
-          </div>
-          <div class="mb-3">
-            <label for="gender" class="form-label">gender</label>
-            <small class="error" [class.d-none]="gender?.valid || gender?.untouched">gender is a required field</small>
-            <input type="text" class="form-control" id="gender" placeholder=""
-            formControlName="gender" [class.is-invalid]="gender?.invalid && gender?.touched">
+        <div class="mb-3">
+          <label for="location" class="form-label">location</label>
+          <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a required
+            field</small>
+          <input type="text" class="form-control" id="location" placeholder="" formControlName="location"
+            [class.is-invalid]="location?.invalid && location?.touched">
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">gender</label>
+          <small class="error" [class.d-none]="gender?.valid || gender?.untouched">gender is a required field</small>
+          <input type="text" class="form-control" id="gender" placeholder="" formControlName="gender"
+            [class.is-invalid]="gender?.invalid && gender?.touched">
         </div>
         <div class="mb-3">
           <label for="designation" class="form-label">designation</label>
-          <small class="error" [class.d-none]="designation?.valid || designation?.untouched">Designation is a required field</small>
-          <input type="text" class="form-control" id="designation" placeholder=""
-          formControlName="designation" [class.is-invalid]="designation?.invalid && designation?.touched">
-      </div>
-      <div class="mb-3">
-        <label for="category" class="form-label">category</label>
-        <small class="error" [class.d-none]="category?.valid || category?.untouched">category is a required field</small>
-        <input type="text" class="form-control" id="category" placeholder=""
-        formControlName="category" [class.is-invalid]="category?.invalid && category?.touched">
-      </div>
-      <div class="mb-3">
-        <label for="projectId" class="form-label">projectId</label>
-        <input type="text" class="form-control" id="projectId" placeholder=""
-        formControlName="projectId">
-      </div>
-      <div class="mb-3">
-        <label for="leadId" class="form-label">leadId</label>
-        <input type="text" class="form-control" id="leadId" placeholder=""
-        formControlName="leadId">
-      </div>
-      <div class="mb-3">
-        <label for="organizationId" class="form-label">organizationId</label>
-        <input type="text" class="form-control" id="organizationId" placeholder=""
-        formControlName="organizationId">
-      </div>
-      <div class="mb-3">
-        <label for="clientCounterpartId" class="form-label">clientCounterpartId</label>
-        <input type="text" class="form-control" id="clientCounterpartId" placeholder=""
-        formControlName="clientCounterpartId">
-      </div>
-      <div class="mb-3">
-        <label for="band" class="form-label">band</label>
-        <small class="error" [class.d-none]="band?.valid || band?.untouched">band is a required field</small>
-        <input type="text" class="form-control" id="band" placeholder=""
-        formControlName="band" [class.is-invalid]="band?.invalid && band?.touched">
-      </div>
-          <div class="mb-3">
-              <button type="submit"  class="btn btn-primary">Submit</button>
-          </div>
+          <small class="error" [class.d-none]="designation?.valid || designation?.untouched">Designation is a required
+            field</small>
+          <input type="text" class="form-control" id="designation" placeholder="" formControlName="designation"
+            [class.is-invalid]="designation?.invalid && designation?.touched">
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">category</label>
+          <small class="error" [class.d-none]="category?.valid || category?.untouched">category is a required
+            field</small>
+          <input type="text" class="form-control" id="category" placeholder="" formControlName="category"
+            [class.is-invalid]="category?.invalid && category?.touched">
+        </div>
+        <div class="mb-3">
+          <label for="projectId" class="form-label">projectId</label>
+          <input type="text" class="form-control" id="projectId" placeholder="" formControlName="projectId">
+        </div>
+        <div class="mb-3">
+          <label for="leadId" class="form-label">leadId</label>
+          <input type="text" class="form-control" id="leadId" placeholder="" formControlName="leadId">
+        </div>
+        <div class="mb-3">
+          <label for="organizationId" class="form-label">organizationId</label>
+          <input type="text" class="form-control" id="organizationId" placeholder="" formControlName="organizationId">
+        </div>
+        <div class="mb-3">
+          <label for="clientCounterpartId" class="form-label">clientCounterpartId</label>
+          <input type="text" class="form-control" id="clientCounterpartId" placeholder=""
+            formControlName="clientCounterpartId">
+        </div>
+        <div class="mb-3">
+          <label for="band" class="form-label">band</label>
+          <small class="error" [class.d-none]="band?.valid || band?.untouched">band is a required field</small>
+          <input type="text" class="form-control" id="band" placeholder="" formControlName="band"
+            [class.is-invalid]="band?.invalid && band?.touched">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
-      </div>
+    </div>
   </div>
-</div>
-<div class ='padding'>
 </div>

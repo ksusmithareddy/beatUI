@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]= "empForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="id" class="form-label">Employee ID</label>
+                <input type="number" class="form-control" id="id" value="{{emp.id}}"
+                formControlName="id" >
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" value="{{emp.name}}"
+              formControlName="name" >
+          </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">location</label>
+                <input type="text" class="form-control" id="location" placeholder="" value="{{emp.location}}"
+                formControlName="location" >
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">gender</label>
+              <input type="text" class="form-control" id="gender" placeholder="" value="{{emp.gender}}"
+              formControlName="gender" >
+          </div>
+          <div class="mb-3">
+            <label for="designation" class="form-label">designation</label>
+            <input type="text" class="form-control" id="designation" placeholder="" value="{{emp.designation}}"
+            formControlName="designation">
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">category</label>
+          <input type="text" class="form-control" id="category" placeholder="" value="{{emp.category}}"
+          formControlName="category">
+        </div>
+        <div class="mb-3">
+          <label for="projectId" class="form-label">project Id</label>
+          <input type="text" class="form-control" id="projectId" placeholder="" value="{{emp.projectId}}"
+          formControlName="projectId">
+        </div>
+        <div class="mb-3">
+          <label for="leadId" class="form-label">leadId</label>
+          <input type="text" class="form-control" id="leadId" placeholder="" value="{{emp.leadId}}"
+          formControlName="leadId">
+        </div>
+        <div class="mb-3">
+          <label for="organizationId" class="form-label">Organization Id</label>
+          <input type="text" class="form-control" id="organizationId" placeholder="" value="{{emp.organizationId}}"
+          formControlName="organizationId">
+        </div>
+        <div class="mb-3">
+          <label for="clientCounterpartId" class="form-label">ClientCounterPart Id</label>
+          <input type="text" class="form-control" id="clientCounterpartId" placeholder="" value="{{emp.clientCounterpartId}}"
+          formControlName="clientCounterpartId">
+        </div>
+        <div class="mb-3">
+          <label for="band" class="form-label">Band</label>
+          <input type="text" class="form-control" id="band" placeholder="" value="{{emp.band}}"
+          formControlName="band" >
+        </div>
+        <div class="mb-3">
+          <label for="dateOfJoining" class="form-label">dateOfJoining</label>
+          <input type="date" class="form-control" id="dateOfJoining" placeholder="" value="{{emp.dateOfJoining}}"
+          formControlName="dateOfJoining" >
+        </div>
+        <div class="mb-3">
+          <label for="dateOfLeaving" class="form-label">dateOfLeaving</label>
+          <input type="date" class="form-control" id="dateOfLeaving" placeholder="" value="{{emp.dateOfLeaving}}"
+          formControlName="dateOfLeaving" >
+        </div>
+            <div class="mb-3">
+                <button type="submit"  class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        </div>
+     
+    </div>
+  </div>
+  <div style="min-height: 30px">
+  
+  </div>

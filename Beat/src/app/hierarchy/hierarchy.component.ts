@@ -17,7 +17,7 @@ export class HierarchyComponent {
   employeeLead: any=[];
   currentEmployee: any=[];
   childrenEmployee: any=[];
-    constructor(public router : ActivatedRoute, public route: Router,private hs: HierarchyService){}
+  constructor(public router : ActivatedRoute, public route: Router,private hs: HierarchyService){}
 
   ngOnInit(): void {
     this.id=localStorage.getItem('empId');
@@ -30,6 +30,11 @@ export class HierarchyComponent {
       for(let i=2;i<this.employees.length;i++)
         this.childrenEmployee.push(this.employees[i]);
       });
+  }
+
+  getDetails(id :number)
+  {
+    this.route.navigate(['profile/',id]);
   }
 
 }

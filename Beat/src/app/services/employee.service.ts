@@ -1,7 +1,10 @@
+
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employee } from 'app/employee/employee';
+import { Profile } from 'app/profile';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,15 +18,13 @@ export class EmployeeService {
     return this.httpClient.post(this.postURL+'/create',data);
   }
   getEmployeeList(): Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>('http://localhost:9090/beat/api/v1/employee');
+    return this.httpClient.get<Employee[]>('http://localhost:9090/beat/api/v1/employee/get');
   }
-  createEmployee(emp: Employee): Observable<Object>{
-    return this.httpClient.post('http://localhost:9090/beat/api/v1/employee', emp);
+  getEmployeeById(id: number): Observable<Profile>{
+    return this.httpClient.get<Profile>('http://localhost:9090/beat/api/v1/employee/get/'+id);
   }
-  getEmployeeById(id: number): Observable<Employee>{
-    return this.httpClient.get<Employee>('http://localhost:9090/beat/api/v1/employee'+id);
+  updateEmployee(id: number, emp:Profile ): Observable<Object>{
+    return this.httpClient.put('http://localhost:9090/beat/api/v1/employee/update/id', emp);
   }
-  updateEmployee(id: number, emp:Employee ): Observable<Object>{
-    return this.httpClient.put('http://localhost:9090/beat/api/v1/employee'+id, emp);
-  }
+
 }
