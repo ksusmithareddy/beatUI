@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit{
 
           DisableEmployee(){
             this.id = this.router.snapshot.params['id'];
-            this.ps.DisableEmployee(this.id);
+            this.ps.DisableEmployee(this.id)
           }
 
   getDetails(id :number)
