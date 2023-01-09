@@ -22,6 +22,7 @@ export class ViewHeirarchyComponent {
       this.org = data;
     });
     this.orgService.getSlabDetails(this.id).subscribe( data => {
+      console.log(data)
       this.slab_data = data;
     });
   }

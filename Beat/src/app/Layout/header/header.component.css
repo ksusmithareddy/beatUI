@@ -50,6 +50,7 @@ cursor: pointer;
 
 
 .horizontalRule{
+    margin-top: 0;
     border-top:1px solid black
 }
 
