@@ -1,27 +1,9 @@
-/* .myButton {
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    background-color: rgb(81, 155, 185);
-    border: black solid 2px;
-    color: Black;
-    font-weight: bolder;
-    padding-right: 2rem;
-    margin-right: 2rem;
-}*/
-
 .container {
     max-width: 500px;
     margin: auto;
     padding-bottom: 50px;
-
+    border:0.4px solid grey;
 }
-
-/* #button {
-    margin-top: 1rem;
-    padding-right: 2rem;
-    margin-right: 2rem;;
-}  */
 .e-card {
     background-color: rgb(207, 243, 78);
     padding-left: 20px;
@@ -45,5 +27,20 @@
     justify-content: flex-start;
     margin-right:auto;
     text-align: center;
-
+}
+.row{
+    margin-top: 5rem;
+    border: 1px solid grey;
+    padding: 2rem;
+    width:90%;
+    margin:auto;
+    margin-top: 5rem;
+}
+.row .card-column{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 70%;
+    padding: 2.5rem;
 }

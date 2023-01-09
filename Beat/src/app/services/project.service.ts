@@ -26,6 +26,14 @@ export class ProjectService {
   updateProject(id:number, project: Project): Observable<Object>{
     return this.httpClient.put('http://localhost:9090/beat/api/v1/project/update', project);
   }
+
+  DisableProject(id:number): Observable<Object>{
+    return this.httpClient.get<Object>('http://localhost:9090/beat/api/v1/project/disable/'+id);
+  }
+
+  getEmployeeList(id: number):Observable<object>{
+    return this.httpClient.get<object>('http://localhost:9090/beat/api/v1/project/employees/'+id);
+  }
   // deleteProject(id: number): Observable<Object>{
   //   return this.httpClient.delete(`${this.baseURL}/${id}`);
   // }

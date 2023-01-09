@@ -26,4 +26,11 @@ export class OrganizationService {
   updateOrganization(id: number, org: organization): Observable<Object>{
     return this.httpClient.put('http://localhost:9090/beat/api/v1/organization/update', org);
   }
+  DisableOrg(id:number): Observable<Object>{
+    return this.httpClient.get<Object>('http://localhost:9090/beat/api/v1/organization/disable/'+id);
+  }
+
+  getSlabDetails(id: number):Observable<object>{
+    return this.httpClient.get<object>('http://localhost:9090/beat/api/v1/organization/slabDetails/'+id);
+  }
 }

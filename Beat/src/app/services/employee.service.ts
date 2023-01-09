@@ -27,4 +27,8 @@ export class EmployeeService {
     return this.httpClient.put('http://localhost:9090/beat/api/v1/employee/update/id', emp);
   }
 
+  getEmployeeHistoryById(id: number): Observable<History>{
+    return this.httpClient.get<History>('http://localhost:9090/beat/api/v1/employee/history/'+id);
+  }
+
 }

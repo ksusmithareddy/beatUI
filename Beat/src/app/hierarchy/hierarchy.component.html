@@ -2,7 +2,7 @@
     <ul>
         <li><a (click)="getDetails(employeeLead.id)"><img src="../../assets/images/a.jpg"><span>{{employeeLead.id}}, {{employeeLead.name}}</span></a>
         <ul>
-            <li><a href="#"><img src="../../assets/images/a.jpg"><span>{{currentEmployee.id}}, {{currentEmployee.name}}</span></a></li>
+            <li><a (click)="getDetails(currentEmployee.id)"><img src="../../assets/images/a.jpg"><span>{{currentEmployee.id}}, {{currentEmployee.name}}</span></a></li>
         </ul>
         <ul>
                 <li *ngFor=" let child of childrenEmployee"><a (click)="getDetails(child.id)"><img src="../../assets/images/a.jpg"><span>{{child.id}}, {{child.name}}</span></a></li>

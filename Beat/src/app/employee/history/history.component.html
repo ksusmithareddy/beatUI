@@ -1,45 +1,36 @@
 
 <div>
- 
-    <div class=" container py-5">
-      <div class="row">
-        <div class="col">
-            <div class="card display">
-               
-
-        
-<table style="width:100%">
-  <tr>
-    <th>Lead</th>
-    <th>Client CounterPart</th> 
-    <th>Organization</th>
-    <th>Organization Department</th>
-    <th>Accolite Department</th>
-    <th>DOJ of Organization</th>
-    <th>DOL of Organization</th>
-    <th>Project</th>
-    <th>Project Joining Date</th>
-    <th>Project Leaving Date</th>
-  </tr>
-  <tr>
-   <td>KIWI</td>
-   <td>A12</td>
-   <td>OpStack</td>
-   <td>ABC</td>
-   <td>dd-mm-yyyy</td>
-   <td>dd-mm-yyyy</td>
- 
-   <td>XYZ</td>
-   <td>dd-mm-yyyy</td>
-   <td>dd-mm-yyyy</td>
-   <app-footer></app-footer>
-  </tr>
- 
+  <div class=" container py-5">
+    <div class="row">
+      <div class="col">
+          <div class="card display">
+            <table class = "table table-striped table-bordered">
+<tr>
+  <th>Employee ID</th>
+  <th>Name</th>
+  <th>Lead Id</th>
+  <th>Organization Id</th>
+  <th>From Date</th>
+  <th>To Date</th>
+  <th>Editor Id</th>
+  <th>Project Id</th>
+  <th>Client Counterpart Id</th>
+</tr>
+<tr  *ngFor="let item of historyList">
+ <td>{{item.empId}}</td>
+ <td>{{item.name}}</td>
+ <td>{{item.leadId}}</td>
+ <td>{{item.organizationId}}</td>
+ <td>{{item.fromDate | date:'yyyy-MM-dd'}}</td>
+ <td>{{item.toDate | date:'yyyy-MM-dd'}}</td>
+ <td>{{item.editorId}}</td>
+ <td>{{item.projectId}}</td>
+ <td>{{item.clientCounterpartId}}</td>
+ <app-footer></app-footer>
+</tr>
 </table>
 </div>
 </div>
 </div>
-
 </div>
-
 </div>

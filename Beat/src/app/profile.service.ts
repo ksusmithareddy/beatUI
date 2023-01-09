@@ -13,4 +13,8 @@ export class ProfileService {
   getEmpDetailsById(id:number){
     return this.http.get<Profile>("http://localhost:9090/beat/api/v1/employee/get/"+id);
   }
+
+  DisableEmployee(id:number){
+    return this.http.get<Object>('http://localhost:9090/beat/api/v1/employee/disable/'+id);
+  }
 }
