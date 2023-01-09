@@ -15,6 +15,7 @@ export class OrganizationlistComponent {
   orgArray : any=[];
   employees : any=[];
   updateOrg! :string;
+  disableOrg ! :string;
 
   constructor(private organizationService: OrganizationService,
     private router: Router,private sharedService : SharedService) { }
@@ -25,6 +26,10 @@ export class OrganizationlistComponent {
     this.sharedService.currentOrgUpdate.subscribe(x=>
       {this.updateOrg=x;
        });
+
+    this.sharedService.currentOrgDisable.subscribe(x =>{
+      this.disableOrg=x;
+    })
     this.getOrganizations();
   }
 
@@ -42,6 +47,8 @@ export class OrganizationlistComponent {
   updateOrganization(id: number){
     this.router.navigate(['update-organization', id]);
   }
+
+
 
   organizationHierarchy(id :number)
   {

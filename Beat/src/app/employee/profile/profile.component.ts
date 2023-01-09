@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnInit, SimpleChanges, DoCheck } from '@angul
 import { ActivatedRoute, Router} from '@angular/router';
 import { Profile } from 'app/profile';
 import { EmployeeService } from 'app/services/employee.service';
+import { HierarchyService } from 'app/services/hierarchy.service';
 import { SharedService } from 'app/services/shared.service';
 import { response } from 'express';
 import {ProfileService} from "../../profile.service"
@@ -19,9 +20,14 @@ export class ProfileComponent implements OnInit{
         id :any;
         oldId :any;
         date! : any;
+        disableEmp ! :string;
+        employees : any=[];
+        employeeLead: any=[];
+        currentEmployee: any=[];
+        childrenEmployee: any=[];
 
            constructor( private datePipe: DatePipe, private sharedData :SharedService, public router : ActivatedRoute, public route: Router,private ps: ProfileService,
-            private empService : EmployeeService
+            private empService : EmployeeService, private hs :HierarchyService
            ){}
            profile!:Profile;
 
@@ -36,6 +42,22 @@ export class ProfileComponent implements OnInit{
                this.profile = x;
                this.date = this.datePipe.transform(this.profile.dateOfJoining, 'yyyy-MM-dd');
              });
+
+             this.sharedData.currentEmpDisable.subscribe(x=>{
+              this.disableEmp=x;
+             });
+              
+             this.hs.getHierarchy(this.id).subscribe((x)=>{
+              this.employees=x;
+              if(this.employees[0])
+              {
+                this.employeeLead=this.employees[0];
+              }
+              this.currentEmployee=this.employees[1];
+              for(let i=2;i<this.employees.length;i++)
+              this.childrenEmployee.push(this.employees[i]);
+            }); 
+            
             }
 
             ngDoCheck(){
@@ -74,4 +96,8 @@ export class ProfileComponent implements OnInit{
             this.ps.DisableEmployee(this.id);
           }
 
+  getDetails(id :number)
+  {
+    this.route.navigate(['profile/',id]);
+  }
 }

@@ -17,9 +17,18 @@ footer{
     margin-top: auto;
 }
 
-hr{
+
+ */
+
+ footer{
+    display: flex;
+    z-index:-2;
+    justify-content: center;
+    align-items: center;
+ }
+
+ hr{
     border-top: 1px solid grey;
     bottom: 15px;
     margin-top: 0;
 }
- */

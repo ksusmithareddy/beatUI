@@ -24,6 +24,7 @@ import { ViewComponent } from './organization/view/view.component';
 import { CreateUpdateComponent } from './employee/create-update/create-update.component';
 import { DatePipe } from '@angular/common';
 import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
+import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heirarchy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
     HierarchyOrganizationComponent,
     ViewComponent,
     CreateUpdateComponent,
-    EmpUpdateComponent
+    EmpUpdateComponent,
+    ViewHeirarchyComponent
   ],
   imports: [
     BrowserModule,

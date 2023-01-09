@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class = "row">
     <h2 style="margin-left: 20px;"> Project List</h2>
 </div>
@@ -32,7 +33,7 @@
                 <button *ngIf="updateValue==='1'" (click) = "updateProject(project.id)" class = "btn btn-primary"> Update</button>
              <!-- <button (click) = "deleteProject(project.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
                 <button (click) = "projectDetails(project.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
-                <button (click) = "projectDisable(project.id)" class = "btn btn-primary" style="margin-left: 10px">Terminate</button>
+                <button  *ngIf="disableProject==='1'" (click) = "projectDisable(project.id)" class = "btn btn-primary" style="margin-left: 10px">Terminate</button>
             </td>
         </tr>
     </tbody>    

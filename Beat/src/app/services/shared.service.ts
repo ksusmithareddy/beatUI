@@ -68,7 +68,7 @@ export class SharedService {
     setProjectTermination(char :string){
       this.projectDisable.next(char);
     }
-    
+
   accessID=localStorage.getItem("accessID");
   private messageSource = new BehaviorSubject<any>(this.accessID);
   currentValue = this.messageSource.asObservable();

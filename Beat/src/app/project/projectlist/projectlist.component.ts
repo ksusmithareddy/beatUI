@@ -12,11 +12,15 @@ import { Project } from '../project';
 export class ProjectlistComponent {
   projects: Project[]=[];
   updateValue! :string;
+  disableProject! :string;
 
   constructor(private projectService: ProjectService,
     private router: Router, private sharedService: SharedService) { }
 
   ngOnInit(): void {
+
+    this.sharedService.currentProjectDisable.subscribe(x=>
+      this.disableProject=x)
     this.sharedService.currentProjectUpdate.subscribe(x=>
       this.updateValue=x);
     this.getProjects();
