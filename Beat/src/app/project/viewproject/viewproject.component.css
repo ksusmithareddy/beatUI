@@ -50,12 +50,24 @@
     padding: 2.5rem;
 }
 
+.tableName{
+    width: max-content;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
 
+}
 
+#employee_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
 
+}
 
-
-
-
-
-
+.card{
+    border:none;
+}

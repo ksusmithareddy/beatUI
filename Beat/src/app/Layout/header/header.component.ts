@@ -113,14 +113,16 @@ ngOnInit(){
       this.accessString=ID;
       this.accessString=this.accessString.split(',').join("");
       this.accessArray=[...this.accessString];
+      console.log(this.accessArray)
 
       this.accessibility();
       //setting update employee character
       this.sharedData.setEmpUpdate(this.accessArray[2]);
       //setting update project character
-      this.sharedData.setProjectUpdate(this.accessArray[6]);
+      this.sharedData.setProjectUpdate(this.accessArray[10]);
       //setting update organization character
-      this.sharedData.setOrgUpdate(this.accessArray[10]);
+
+      this.sharedData.setOrgUpdate(this.accessArray[6]);
       //setting disable employee character
       this.sharedData.setEmpTermination(this.accessArray[3]);
       //setting disable project character
