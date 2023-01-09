@@ -1,9 +1,7 @@
-<div class="row">
-    <div class="col-sm-6">
+<div class="row" >
+    <div class="col-sm-6 card-column" style="align-items: center;"  >
         <div class="card">
-            <div class="card-body">
-                <div>
-                    <div>
+                    <div >
                         <label> <b> Project Id: </b></label> {{project.id}}
                     </div>
                     <div>
@@ -25,13 +23,11 @@
                         <label> <b> Project Type: </b></label> {{project.projectType}}
                     </div>
                     <div>
-                        <label> <b> Start Date: </b></label> {{project.startDate}}
+                        <label> <b> Start Date: </b></label> {{startDate}}
                     </div>
                     <div>
-                        <label> <b> End Date: </b></label> {{project.endDate}}
+                        <label> <b> End Date: </b></label> {{endDate}}
                     </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="col-sm-6 employee_data" id="employee_data">
@@ -59,3 +55,4 @@
         </div>
     </div>
 </div>
+

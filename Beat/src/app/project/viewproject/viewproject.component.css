@@ -2,6 +2,7 @@
     max-width: 500px;
     margin: auto;
     padding-bottom: 50px;
+    border:0.4px solid grey;
 }
 /* #button {
     margin-top: 1rem;
@@ -33,6 +34,28 @@
     text-align: center;
 }
 .row{
+    margin-top: 5rem;
+    border: 1px solid grey;
+    padding: 2rem;
+    width:90%;
+    margin:auto;
+    margin-top: 5rem;
+}
+.row .card-column{
     display: flex;
     justify-content: center;
 }
+.card{
+    width: 70%;
+    padding: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
