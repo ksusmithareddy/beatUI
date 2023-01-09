@@ -1,5 +1,3 @@
-
-
 export class Profile {
     id!:number;
     name!:string;
@@ -14,4 +12,10 @@ export class Profile {
     clientCounterpartId!:number;
     band!:number;
     dateOfLeaving!:Date;
+    projectIdName!: string;
+    leadIdName!: string;
+    organizationIdName!: string;
+    clientCounterpartIdName!: string;
+    bandName!: string;
+    email!: string;
 }

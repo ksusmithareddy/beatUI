@@ -24,7 +24,7 @@
 
 
 
-
+<!-- 
       <div class="col-lg-8">
         <div class="card mb-4 profile-detail">
           <div class="card-body">
@@ -105,6 +105,80 @@
             </div>
             <hr>
 
+          </div>
+        </div>
+      </div> -->
+      <div class="col-lg-8">
+        <div class="card mb-4 profile-detail">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Employee ID</p>
+                <p class="text-muted mb-0">{{profile.id}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Gender</p>
+                <p class="text-muted mb-0">{{profile.gender}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Designation</p>
+                <p class="text-muted mb-0">{{profile.designation}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Organization</p>
+                <p class="text-muted mb-0">{{profile.organizationIdName}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Name</p>
+                <p class="text-muted mb-0">{{profile.name}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Category</p>
+                <p class="text-muted mb-0">{{profile.category}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Project</p>
+                <p class="text-muted mb-0">{{profile.projectIdName}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Band</p>
+                <p class="text-muted mb-0">{{profile.bandName}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Current Office Location</p>
+                <p class="text-muted mb-0">{{profile.location}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Date Of Joining</p>
+                <p class="text-muted mb-0">{{date}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Date Of Leaving</p>
+                <p class="text-muted mb-0">{{profile.dateOfLeaving | date: 'yyyy-MM-dd'}}</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="mb-0">Client Counter Part </p>
+                <p class="text-muted mb-0">{{profile.clientCounterpartIdName}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Lead</p>
+              <p class="text-muted mb-0">{{profile.leadIdName}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+              <p class="text-muted mb-0">{{profile.email}}</p>
+            </div>
+            <hr>
           </div>
         </div>
       </div>
