@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
                this.jwt=response.jwt;
                document.cookie="JWT"+'='+this.jwt;
                localStorage.setItem('accessID',this.access);
+               localStorage.setItem('jwt',this.jwt);
                this.accessString=localStorage.getItem('accessID')
                this.sharedService.passValue(this.accessString);
                this.empId=response.empId;

@@ -25,6 +25,7 @@ export class OrganizationlistComponent {
   ngOnInit(): void {
     this.sharedService.currentOrgUpdate.subscribe(x=>
       {this.updateOrg=x;
+        console.log(this.updateOrg);
        });
 
     this.sharedService.currentOrgDisable.subscribe(x =>{

@@ -1,3 +1,7 @@
-.createEmployee{
-
+.tableName{
+    display: flex;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    margin-bottom: 3rem;
 }

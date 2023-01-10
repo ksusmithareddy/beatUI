@@ -22,15 +22,18 @@ import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heira
 import { ViewComponent } from './organization/view/view.component';
 import { HierarchyOrganizationComponent } from './hierarchy-organization/hierarchy-organization.component';
 import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
+import {AuthguardGuard} from "../app/shared/authguard.guard"
+import { UpdateRoleGuard } from './shared/update-role.guard';
 
 const routes: Routes = [
   
   { path: 'login', component: LoginComponent },
-  { path: 'homepage', component: HomepageComponent},
+  { path: 'homepage', component: HomepageComponent, canActivate: [AuthguardGuard],},
   {
     path: 'profile/:id', component: ProfileComponent, 
+    canActivate: [AuthguardGuard],
   },
-  { path: 'profile/history/:id', component: HistoryComponent },
+  { path: 'profile/history/:id', component: HistoryComponent, canActivate: [AuthguardGuard]},
     { path: 'profile/timesheets', component: DisplayTimesheetComponent },
 
   {
@@ -45,7 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'employee/update/:id',
-    component : EmpUpdateComponent
+    component : EmpUpdateComponent,canActivate: [UpdateRoleGuard]
   },
 
   {

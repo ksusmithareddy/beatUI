@@ -25,6 +25,7 @@ import { CreateUpdateComponent } from './employee/create-update/create-update.co
 import { DatePipe } from '@angular/common';
 import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
 import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heirarchy.component';
+import { ProfileComponent } from './employee/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { ViewHeirarchyComponent } from './organization/view-heirarchy/view-heira
     ViewComponent,
     CreateUpdateComponent,
     EmpUpdateComponent,
-    ViewHeirarchyComponent
+    ViewHeirarchyComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
