@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, public authservice: AuthService, private sharedService :SharedService) { }
   ngOnInit() {
+
+    console.log(this.authservice.canUpdateEmployee());
      
    }
 

@@ -17,7 +17,6 @@ export class HierarchyOrganizationComponent {
     this.id = this.router.snapshot.params['id'];
     this.hos.getOrganizationHierarchy(this.id).subscribe((x)=>{
       this.organizations=x;
-      console.log(this.organizations);
       this.OrganizationLead=this.organizations[0];
       this.currentOrganization=this.organizations[1];
       for(let i=2;i<this.organizations.length;i++)
