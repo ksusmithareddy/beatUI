@@ -158,7 +158,7 @@
                 <p class="mb-0">Date Of Joining</p>
                 <p class="text-muted mb-0">{{date}}</p>
               </div>
-              <div class="col-sm-3">
+              <div *ngIf="profile.dateOfLeaving!=null" class="col-sm-3">
                 <p class="mb-0">Date Of Leaving</p>
                 <p class="text-muted mb-0">{{profile.dateOfLeaving | date: 'yyyy-MM-dd'}}</p>
               </div>

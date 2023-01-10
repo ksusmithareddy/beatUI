@@ -10,4 +10,8 @@ export interface History {
     editorId : number;
     projectId : number;
     status : boolean;
+    editorIdName : string;
+    projectIdName : string;
+    clientCounterpartIdName : string;
+    orgazizationIdName : string;
 }

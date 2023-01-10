@@ -35,11 +35,14 @@
 }
 .row{
     margin-top: 5rem;
-    border: 1px solid grey;
     padding: 2rem;
     width:90%;
     margin:auto;
     margin-top: 5rem;
+    border: 0.2px solid rgb(209, 209, 209);
+    box-shadow: 2px 2px 1px 2px rgb(200,200,200);
+    background-color: rgba(200,200,200, 0.1);
+    border-radius: 10px;
 }
 .row .card-column{
     display: flex;
@@ -47,27 +50,16 @@
 }
 .card{
     width: 70%;
-    padding: 2.5rem;
+    padding: 2rem;
+    border: 0.2px solid rgb(209, 209, 209);
+    box-shadow: 2px 2px 1px 2px rgb(200,200,200);
+    background-color: rgba(200,200,200, 0.5);
+    border-radius: 10px;
 }
-
-.tableName{
-    width: max-content;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    text-transform: uppercase;
-
-}
-
-#employee_data{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+h3{
     text-align: center;
-    align-items: center;
-    text-transform: uppercase;
-
+    margin-top: 0px;
 }
-
-.card{
-    border:none;
+.card-body {
+    padding: 0px;
 }
