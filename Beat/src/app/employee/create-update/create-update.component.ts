@@ -29,7 +29,6 @@ export class CreateUpdateComponent {
   public countries: { value: string; text: string; }[] = [];
   data: any;
   id: any;
-    country: any;
   constructor(private employeeService : EmployeeService, private route :ActivatedRoute, private route1 :Router, public httpClient: HttpClient){}
    ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -39,6 +38,7 @@ export class CreateUpdateComponent {
     name : new FormControl('',[Validators.required] ),
     location : new FormControl('',[Validators.required] ),
     gender : new FormControl('',[Validators.required] ),
+   dateOfJoining: new FormControl('',[Validators.required]),
     designation : new FormControl('',[Validators.required] ),
     category : new FormControl('',[Validators.required] ),
     projectId : new FormControl('',[Validators.required] ),
@@ -46,17 +46,20 @@ export class CreateUpdateComponent {
     organizationId : new FormControl('',[Validators.required] ),
     clientCounterpartId : new FormControl('',[Validators.required] ),
     band :  new FormControl('',[Validators.required] ),
+    dateOfLeaving: new FormControl('',[])
   });
   onSubmit() {
     this.data = this.empForm.value;
     alert("employee is added")
-    this.employeeService.saveEmployeeData(this.data).subscribe((data) =>
-      console.log(data)
+    this.employeeService.saveEmployeeData(this.data).subscribe((data) =>{
+      console.log(data);
+      this.goToProfile();
+    }
     );
   }
-  // goToProjectList(){
-  //   this.route1.navigate(['/organizations']);
-  // }
+  goToProfile(){
+    this.route1.navigate(['/profile']);
+  }
  get name() {
     return this.empForm.get('name')
   }
@@ -86,5 +89,8 @@ export class CreateUpdateComponent {
   }
   get band() {
     return this.empForm.get('band')
+  }
+  get dateOfJoining(){
+    return this.empForm.get('dateOfJoining')
   }
 }

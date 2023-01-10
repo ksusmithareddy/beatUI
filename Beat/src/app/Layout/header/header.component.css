@@ -5,7 +5,8 @@
 .header{
     text-align: center;
     align-items: center;
-    padding: 1.1rem
+    padding: 1.1rem;
+    background-Color :#d3d3d35e;
 }
 
 .header_search-bar{

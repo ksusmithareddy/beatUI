@@ -1,3 +1,4 @@
+<h3>Organization Details</h3>
 <div class="row">
     <div  class="col-sm-6 card-column d-flex " style="align-items: center; flex-direction: column;" >
         <div class="tableName mb-3">ORGANIZATION DETAILS</div>
@@ -22,7 +23,7 @@
                     </div>
         </div>
     </div>
-    <div class="col-sm-6 slab_details" id="slab_details">
+    <div  class="col-sm-6 card-column d-flex "  id="slab_details" style="align-items: center; flex-direction: column;">
         <div class="tableName mb-3">SLAB DETAILS</div>
         <div class="card">
             <div class="card-body">
@@ -46,12 +47,39 @@
 </div>
 <div class="empHierarchy">
     <ul>
-        <li><a (click)="getDetails(OrganizationLead.id)"><img src="../../assets/images/a.jpg"><span>{{OrganizationLead.id}}, {{OrganizationLead.orgName}}</span></a>
+        <li><a (click)="getDetails(OrganizationLead.id)"><div class="heirarchy-card">
+            <div class="user-image">
+              <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+            </div>
+            <div class="heirarchy-content">
+                <p>-----------------------------</p>
+                <p class="heir-details">{{OrganizationLead.orgName}} ({{OrganizationLead.id}})</p>
+                <p class="heir-details">{{OrganizationLead.owner}} ({{OrganizationLead.location}})</p>
+            </div>
+            </div></a></li>
         <ul>
-            <li><a (click)="getDetails(currentOrganization.id)"><img src="../../assets/images/a.jpg"><span>{{currentOrganization.id}}, {{currentOrganization.orgName}}</span></a></li>
+            <li><a (click)="getDetails(currentOrganization.id)"><div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+                </div>
+                <div class="heirarchy-content">
+                    <p>-----------------------------</p>
+                    <p class="heir-details">{{OrganizationLead.orgName}} ({{OrganizationLead.id}})</p>
+                    <p class="heir-details">{{OrganizationLead.owner}} ({{OrganizationLead.location}})</p>
+                </div>
+                </div></a></li>
         </ul>
         <ul>
-                <li *ngFor=" let child of childrenOrganization"><a (click)="getDetails(child.id)"><img src="../../assets/images/a.jpg"><span>{{child.id}}, {{child.orgName}}</span></a></li>
+            <li *ngFor=" let child of childrenOrganization"><a (click)="getDetails(child.id)"><div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+                </div>
+                <div class="heirarchy-content">
+                    <p>-----------------------------</p>
+                    <p class="heir-details">{{child.orgName}} ({{child.id}})</p>
+                    <p class="heir-details">{{child.owner}} ({{child.location}})</p>
+                </div>
+                </div></a></li>
         </ul>
     </ul>
 </div>
