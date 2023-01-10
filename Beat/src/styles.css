@@ -13,3 +13,11 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+.title{
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
