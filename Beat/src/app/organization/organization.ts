@@ -4,5 +4,7 @@ export class organization {
     location!:string;
     owner!:string;
     ownerEmpId! :string;
-    parentOrg! :number
+    parentOrg! :number;
+    parentOrgIdName !: string;
+    status!:boolean;
 }

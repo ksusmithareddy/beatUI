@@ -14,4 +14,5 @@ export interface History {
     projectIdName : string;
     clientCounterpartIdName : string;
     orgazizationIdName : string;
+    leadIdName : string;
 }

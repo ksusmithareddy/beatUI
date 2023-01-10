@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   id: any;
   oldId: any;
   date!: any;
+  dateofleaving!:any;
   disableEmp !: string;
   profile!: Profile;
   empid: any;
@@ -38,6 +39,7 @@ export class ProfileComponent implements OnInit {
     this.oldId = this.id;
     this.ps.getEmpDetailsById(this.id).subscribe((x) => {
       this.profile = x;
+      this.dateofleaving = this.profile.dateOfLeaving;
       this.date = this.datePipe.transform(this.profile.dateOfJoining, 'yyyy-MM-dd');
       console.log(this.profile);
     });
@@ -55,7 +57,6 @@ export class ProfileComponent implements OnInit {
   }
   ngDoCheck() {
     this.id = this.router.snapshot.paramMap.get('id');
-    console.log(this.id + " in ngdocheck")
     if (this.id !== this.oldId) {
       this.oldId = this.id;
       this.ps.getEmpDetailsById(this.id).subscribe((x) => {
@@ -87,7 +88,9 @@ export class ProfileComponent implements OnInit {
   }
   DisableEmployee() {
     this.id = this.router.snapshot.params['id'];
-    this.ps.DisableEmployee(this.id)
+    this.ps.DisableEmployee(this.id).subscribe(x=>{
+      console.log(x);
+    })
   }
   getDetails(id: number) {
     this.route.navigate(['profile/', id]);
