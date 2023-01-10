@@ -9,7 +9,7 @@ import { shareReplay } from 'rxjs/operators';
 export class AuthService {
 
   access! : any;
-  accessString='';
+  accessString !: string;
   accessArray:any[]=[];
   constructor(private http:HttpClient) {}
 
@@ -19,19 +19,64 @@ export class AuthService {
    return false;
   }
 
-  canUpdateEmployee(){
-    
-    
+  canUpdateEmployee(){ 
     if(localStorage.getItem('accessID')!=null)
     {
-    
     this.access=localStorage.getItem('accessID');
-    this.accessString=this.accessString.split(',').join("");
-    this.accessArray=[...this.accessString];
-    console.log(this.accessArray);
-    return true;
-    // if(this.accessArray[])
+    if(this.access[2]==='1')
+          return true;
     }
+
+    return false;
+  }
+
+  canUpdateProject(){
+    if(localStorage.getItem('accessID')!=null){
+      this.access=localStorage.getItem('accessID');
+      if(this.access[12]==='1')
+           return true;
+    }
+
+    return false;
+  }
+
+  canUpdateOrg(){
+    if(localStorage.getItem('accessID')!=null){
+      this.access=localStorage.getItem('accessID');
+      if(this.access[7]==='1')
+           return true;
+    }
+
+    return false;
+  }
+
+  canCreateEmp(){
+    if(localStorage.getItem('accessID')!=null){
+      this.access=localStorage.getItem('accessID');
+      if(this.access[0]==='1')
+           return true;
+    }
+
+    return false;
+  }
+
+  canCreateOrg(){
+    if(localStorage.getItem('accessID')!=null){
+      this.access=localStorage.getItem('accessID');
+      if(this.access[5]==='1')
+           return true;
+    }
+
+    return false;
+  }
+
+  canCreateProject(){
+    if(localStorage.getItem('accessID')!=null){
+      this.access=localStorage.getItem('accessID');
+      if(this.access[10]==='1')
+           return true;
+    }
+
     return false;
   }
    

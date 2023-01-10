@@ -24,6 +24,11 @@ import { HierarchyOrganizationComponent } from './hierarchy-organization/hierarc
 import { EmpUpdateComponent } from './employee/emp-update/emp-update.component';
 import {AuthguardGuard} from "../app/shared/authguard.guard"
 import { UpdateRoleGuard } from './shared/update-role.guard';
+import { UpdateProjectGuard } from './shared/update-project.guard';
+import { UpdateOrgGuard } from './shared/update-org.guard';
+import {CreateOrgGuard} from './shared/create-org.guard';
+import {CreateEmpGuard} from './shared/create-emp.guard';
+import {CreateProjectGuard} from './shared/create-project.guard'
 
 const routes: Routes = [
   
@@ -43,21 +48,21 @@ const routes: Routes = [
 
 
   {
-    path: 'employee/createupdate',
-    component: CreateUpdateComponent
+    path: 'employee/create',
+    component: CreateUpdateComponent, canActivate: [AuthguardGuard, CreateEmpGuard]
   },
   {
     path: 'employee/update/:id',
-    component : EmpUpdateComponent,canActivate: [UpdateRoleGuard]
+    component : EmpUpdateComponent,canActivate: [AuthguardGuard, UpdateRoleGuard]
   },
 
   {
     path: 'createProject',
-    component: CreateprojectComponent
+    component: CreateprojectComponent, canActivate: [AuthguardGuard, CreateProjectGuard]
   },
   {
     path: 'update-project/:id',
-    component: UpdateprojectComponent
+    component: UpdateprojectComponent, canActivate:[AuthguardGuard, UpdateProjectGuard]
   },
   { path: 'view-project/:id', component: ViewprojectComponent },
   { path: 'projects', component: ProjectlistComponent },
@@ -80,11 +85,11 @@ const routes: Routes = [
   },
   {
     path: 'createOrganization',
-    component: CreateOrganizationComponent
+    component: CreateOrganizationComponent, canActivate:[AuthguardGuard, CreateOrgGuard]
   },
   {
     path: 'update-organization/:id',
-    component: UpdateOrganizationComponent
+    component: UpdateOrganizationComponent, canActivate:[AuthguardGuard, UpdateOrgGuard]
   },
 
    {

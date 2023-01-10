@@ -22,7 +22,6 @@ export class HierarchyComponent {
     console.log(this.empid);
     this.hs.getHierarchy(this.empid).subscribe((x)=>{
       this.employees=x;
-      console.log(this.employees);
       this.employeeLead=this.employees[0];
       this.currentEmployee=this.employees[1];
       for(let i=2;i<this.employees.length;i++)
